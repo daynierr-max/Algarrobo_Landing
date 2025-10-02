@@ -92,14 +92,12 @@ export default function Home() {
 
   return (
     <div className="flex flex-col min-h-[100dvh] bg-background text-foreground">
-       <FadeInOnScroll>
-        <header className="px-4 lg:px-6 h-20 flex items-center justify-between sticky top-0 z-50 w-full border-b border-border/40 bg-background/80 backdrop-blur-sm">
-          <div className="flex items-center justify-center">
-              <Link href="#" className="flex items-center" prefetch={false}>
-                <Logo />
-                <span className="sr-only">Algarrobo Adult Day Care</span>
-              </Link>
-          </div>
+      <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/80 backdrop-blur-sm">
+        <div className="container flex h-20 items-center justify-between px-4 lg:px-6">
+          <Link href="#" className="flex items-center" prefetch={false}>
+            <Logo />
+            <span className="sr-only">Algarrobo Adult Day Care</span>
+          </Link>
           
           <nav className="hidden lg:flex items-center gap-6">
               <Link href="#services" className="text-sm font-medium hover:underline underline-offset-4" prefetch={false}>
@@ -115,8 +113,8 @@ export default function Home() {
                   <Link href="#contact"><span>Contact Us</span></Link>
               </Button>
           </nav>
-        </header>
-      </FadeInOnScroll>
+        </div>
+      </header>
 
       <main className="flex-1">
         <section id="hero" className="w-full py-20 md:py-24 lg:py-32">
@@ -225,7 +223,7 @@ export default function Home() {
         <section id="about" className="w-full py-12 md:py-20 lg:py-24">
           <div className="container px-4 md:px-6">
             <div className="grid gap-10 lg:grid-cols-2 lg:gap-16 items-center">
-               <FadeInOnScroll>
+               <FadeInOnScroll className="flex justify-center">
                 {aboutImage && (
                   <Image
                     alt={aboutImage.description}
@@ -237,9 +235,9 @@ export default function Home() {
                   />
                 )}
               </FadeInOnScroll>
-              <div className="flex flex-col items-start space-y-4 text-center lg:text-left">
+              <div className="flex flex-col justify-center space-y-4">
                   <FadeInOnScroll>
-                    <div className="space-y-4">
+                    <div className="space-y-4 text-center lg:text-left">
                         <div className="inline-block rounded-lg bg-accent/20 px-3 py-1 text-sm text-accent-foreground">Our Story</div>
                         <h2 className="lg:leading-tighter text-3xl font-headline font-bold tracking-tighter sm:text-4xl md:text-5xl">
                           Rooted in Community, Growing with Care
@@ -294,17 +292,16 @@ export default function Home() {
         </section>
       </main>
 
-      <FadeInOnScroll>
-        <footer className="py-8 w-full shrink-0 border-t bg-secondary/40">
-          <div className="container px-4 md:px-6 grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
-              <div className="flex flex-col items-center md:items-start gap-2">
+      <footer className="py-8 w-full shrink-0 border-t bg-secondary/40">
+          <div className="container px-4 md:px-6 grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
+              <div className="flex flex-col items-center md:items-start gap-2 text-center md:text-left">
                   <h3 className="font-headline text-lg font-bold">Horario</h3>
                   <div className="text-sm text-muted-foreground space-y-1">
                       <p className="flex items-center justify-center md:justify-start gap-2"><Clock className="h-4 w-4" /> Lunes a Viernes</p>
                       <p className="ml-6 md:ml-0">8:00 am - 4:00 pm</p>
                   </div>
               </div>
-              <div className="flex flex-col items-center md:items-start gap-2">
+              <div className="flex flex-col items-center md:items-start gap-2 text-center md:text-left">
                   <h3 className="font-headline text-lg font-bold">Contacto</h3>
                   <div className="text-sm text-muted-foreground space-y-1">
                       <a href={mapsUrl} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center md:justify-start gap-2 hover:underline">
@@ -347,11 +344,8 @@ export default function Home() {
                   </Link>
               </nav>
           </div>
-        </footer>
-      </FadeInOnScroll>
+      </footer>
       <ScrollToTopButton />
     </div>
   );
 }
-
-    
