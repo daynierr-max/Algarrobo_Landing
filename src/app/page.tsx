@@ -75,7 +75,6 @@ const WhatsappIcon = (props: React.SVGProps<SVGSVGElement>) => (
   );
 
 export default function Home() {
-  const aboutImage = PlaceHolderImages.find(p => p.id === 'about-us-care');
   const [year, setYear] = useState<number | null>(null);
   const mapsUrl = "https://www.google.com/maps/search/?api=1&query=208%20WASHINGTON%20AVE.%20HOMESTEAD,%20FL%2033030";
 
@@ -91,17 +90,17 @@ export default function Home() {
 
 
   return (
-    <div className="flex flex-col min-h-[100dvh]">
+    <div className="flex flex-col min-h-[100dvh] bg-background text-foreground">
        <FadeInOnScroll>
-        <header className="px-4 lg:px-6 h-24 flex items-center justify-between sticky top-0 z-50 w-full border-b border-border/40 bg-background/80 backdrop-blur-sm">
-          <div className="flex items-center">
-              <Link href="#" className="flex items-center justify-center" prefetch={false}>
+        <header className="px-4 lg:px-6 h-20 flex items-center justify-between sticky top-0 z-50 w-full border-b border-border/40 bg-background/80 backdrop-blur-sm">
+          <div className="flex items-center justify-center">
+              <Link href="#" className="flex items-center" prefetch={false}>
                 <Logo />
                 <span className="sr-only">Algarrobo Adult Day Care</span>
               </Link>
           </div>
           
-          <nav className="hidden lg:flex items-center gap-4 sm:gap-6">
+          <nav className="hidden lg:flex items-center gap-6">
               <Link href="#services" className="text-sm font-medium hover:underline underline-offset-4" prefetch={false}>
                 Services
               </Link>
@@ -119,11 +118,11 @@ export default function Home() {
       </FadeInOnScroll>
 
       <main className="flex-1">
-        <section id="hero" className="w-full py-20 md:py-24 lg:py-24">
+        <section id="hero" className="w-full py-20 md:py-24 lg:py-32">
           <div className="container px-4 md:px-6">
             <div className="flex flex-col items-center space-y-6 text-center">
               
-              <div className="max-w-3xl">
+              <div className="max-w-4xl">
                 <FadeInOnScroll>
                   <h1 className="text-4xl font-headline font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl text-primary">
                     A Warm, Welcoming Day for Your Loved Ones
@@ -136,7 +135,7 @@ export default function Home() {
                 </FadeInOnScroll>
               </div>
               <FadeInOnScroll delay={200}>
-                <div className="space-x-4">
+                <div className="space-x-4 mt-4">
                   <Button asChild size="lg">
                     <Link href="#services">Explore Our Services</Link>
                   </Button>
@@ -146,7 +145,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="services" className="w-full py-12 md:py-20 lg:py-20 bg-secondary/40">
+        <section id="services" className="w-full py-12 md:py-20 lg:py-24 bg-secondary/40">
           <div className="container px-4 md:px-6">
             <FadeInOnScroll>
               <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
@@ -159,7 +158,7 @@ export default function Home() {
                 </div>
               </div>
             </FadeInOnScroll>
-            <div className="mx-auto grid items-start gap-8 sm:max-w-4xl sm:grid-cols-2 md:gap-12 lg:max-w-5xl">
+            <div className="mx-auto grid items-start gap-8 sm:max-w-4xl sm:grid-cols-2 md:gap-12 lg:max-w-5xl lg:grid-cols-3">
               {services.map((service, index) => (
                 <FadeInOnScroll key={index} delay={index * 100}>
                   <Card className="bg-card backdrop-blur-sm transition-all duration-300 hover:shadow-xl hover:-translate-y-2 h-full">
@@ -177,7 +176,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="schedule" className="w-full py-12 md:py-20 lg:py-20">
+        <section id="schedule" className="w-full py-12 md:py-20 lg:py-24">
           <div className="container px-4 md:px-6">
             <FadeInOnScroll>
               <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
@@ -191,9 +190,9 @@ export default function Home() {
               </div>
             </FadeInOnScroll>
             <FadeInOnScroll delay={100}>
-              <Card className="w-full overflow-hidden">
+              <Card className="w-full overflow-hidden shadow-lg">
                 <div className="overflow-x-auto">
-                  <Table className="text-lg">
+                  <Table className="text-base">
                     <TableHeader>
                       <TableRow>
                         {schedule.headers.map((header) => (
@@ -203,10 +202,10 @@ export default function Home() {
                     </TableHeader>
                     <TableBody>
                       {schedule.rows.map((row, rowIndex) => (
-                        <TableRow key={rowIndex} className="even:bg-muted/40">
-                          <TableCell className="font-medium text-center">{row.time}</TableCell>
+                        <TableRow key={rowIndex} className="even:bg-muted/40 text-center">
+                          <TableCell className="font-medium">{row.time}</TableCell>
                           {row.activities.map((activity, activityIndex) => (
-                            <TableCell key={activityIndex} className="text-center text-foreground/90">
+                            <TableCell key={activityIndex} className="text-foreground/90">
                               {activity.split(' / ').map((part, partIndex) => (
                                 <span key={partIndex} className="block">{part}</span>
                               ))}
@@ -222,37 +221,25 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="about" className="w-full py-12 md:py-20 lg:py-20">
-          <div className="container grid items-center gap-10 px-4 md:px-6 lg:grid-cols-2 lg:gap-16">
-            <FadeInOnScroll>
-              <div className="space-y-4">
-                <div className="inline-block rounded-lg bg-accent/20 px-3 py-1 text-sm text-accent-foreground">Our Story</div>
-                <h2 className="lg:leading-tighter text-3xl font-headline font-bold tracking-tighter sm:text-4xl md:text-5xl xl:text-[3.4rem] 2xl:text-[3.75rem]">
-                  Rooted in Community, Growing with Care
-                </h2>
-                <p className="max-w-[600px] text-foreground/80 md:text-xl/relaxed">
-                  Named after the resilient Algarrobo tree, our center was founded on the principles of strength, shelter, and community. We believe in creating a nurturing space where seniors can thrive, connect, and continue to grow. Our mission is to provide exceptional care that feels like family.
-                </p>
-              </div>
-            </FadeInOnScroll>
-            {aboutImage && (
-              <FadeInOnScroll delay={100}>
-                <div className="flex justify-center">
-                   <Image
-                    src={aboutImage.imageUrl}
-                    alt={aboutImage.description}
-                    data-ai-hint={aboutImage.imageHint}
-                    width={800}
-                    height={600}
-                    className="mx-auto aspect-[4/3] overflow-hidden rounded-xl object-cover object-center sm:w-full lg:order-last transition-all duration-300 hover:shadow-xl hover:-translate-y-2"
-                  />
+        <section id="about" className="w-full py-12 md:py-20 lg:py-24">
+          <div className="container px-4 md:px-6">
+            <div className="flex flex-col items-center space-y-8 text-center">
+              <FadeInOnScroll>
+                <div className="space-y-4 max-w-3xl">
+                    <div className="inline-block rounded-lg bg-accent/20 px-3 py-1 text-sm text-accent-foreground">Our Story</div>
+                    <h2 className="lg:leading-tighter text-3xl font-headline font-bold tracking-tighter sm:text-4xl md:text-5xl">
+                      Rooted in Community, Growing with Care
+                    </h2>
+                    <p className="mx-auto max-w-[700px] text-foreground/80 md:text-xl/relaxed">
+                      Named after the resilient Algarrobo tree, our center was founded on the principles of strength, shelter, and community. We believe in creating a nurturing space where seniors can thrive, connect, and continue to grow. Our mission is to provide exceptional care that feels like family.
+                    </p>
                 </div>
               </FadeInOnScroll>
-            )}
+            </div>
           </div>
         </section>
 
-        <section id="contact" className="w-full py-12 md:py-20 lg:py-20 bg-primary/10 border-t">
+        <section id="contact" className="w-full py-12 md:py-20 lg:py-24 bg-primary/10 border-t">
           <div className="container grid items-center justify-center gap-8 px-4 text-center md:px-6">
             <FadeInOnScroll>
               <div className="space-y-3">
@@ -265,7 +252,7 @@ export default function Home() {
               </div>
             </FadeInOnScroll>
             <FadeInOnScroll delay={100}>
-              <div className="mx-auto w-full max-w-lg space-y-4">
+              <div className="mx-auto w-full max-w-md space-y-4">
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <Button asChild size="lg" className="w-full">
                         <a href="tel:786-360-7503">
@@ -278,8 +265,8 @@ export default function Home() {
                         </a>
                     </Button>
                   </div>
-                  <div className="text-sm text-muted-foreground space-y-2">
-                    <a href={mapsUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 hover:underline">
+                  <div className="text-sm text-muted-foreground pt-4 space-y-2">
+                    <a href={mapsUrl} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 hover:underline">
                       <Building className="h-4 w-4" /> 208 WASHINGTON AVE. • HOMESTEAD, FL 33030
                     </a>
                     <p className="flex items-center justify-center gap-2">
@@ -297,29 +284,29 @@ export default function Home() {
           <div className="container px-4 md:px-6 grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
               <div className="flex flex-col items-center md:items-start gap-2">
                   <h3 className="font-headline text-lg font-bold">Horario</h3>
-                  <div className="text-sm text-muted-foreground">
-                      <p className="flex items-center gap-2"><Clock className="h-4 w-4" /> Lunes a Viernes</p>
-                      <p className="ml-6">8:00 am - 4:00 pm</p>
+                  <div className="text-sm text-muted-foreground space-y-1">
+                      <p className="flex items-center justify-center md:justify-start gap-2"><Clock className="h-4 w-4" /> Lunes a Viernes</p>
+                      <p className="ml-6 md:ml-0">8:00 am - 4:00 pm</p>
                   </div>
               </div>
               <div className="flex flex-col items-center md:items-start gap-2">
                   <h3 className="font-headline text-lg font-bold">Contacto</h3>
                   <div className="text-sm text-muted-foreground space-y-1">
-                      <a href={mapsUrl} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:underline">
+                      <a href={mapsUrl} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center md:justify-start gap-2 hover:underline">
                           <Building className="h-4 w-4" /> 208 WASHINGTON AVE. • HOMESTEAD, FL 33030
                       </a>
-                      <a href="mailto:algarroboadultdaycarellc@gmail.com" className="flex items-center gap-2 hover:underline">
+                      <a href="mailto:algarroboadultdaycarellc@gmail.com" className="flex items-center justify-center md:justify-start gap-2 hover:underline">
                           <Mail className="h-4 w-4" /> algarroboadultdaycarellc@gmail.com
                       </a>
-                      <a href="tel:786-360-7503" className="flex items-center gap-2 hover:underline">
+                      <a href="tel:786-360-7503" className="flex items-center justify-center md:justify-start gap-2 hover:underline">
                           <Phone className="h-4 w-4" /> Tel: 786-360-7503
                       </a>
-                      <p className="flex items-center gap-2">
+                      <p className="flex items-center justify-center md:justify-start gap-2">
                           <Printer className="h-4 w-4" /> Fax: 786-504-3411
                       </p>
                   </div>
               </div>
-              <div className="flex flex-col items-center md:items-start gap-4">
+              <div className="flex flex-col items-center md:items-end gap-4">
                   <h3 className="font-headline text-lg font-bold">Síguenos</h3>
                   <div className="flex gap-4">
                       <Link href="#" aria-label="Facebook" prefetch={false}>
@@ -351,3 +338,5 @@ export default function Home() {
     </div>
   );
 }
+
+    
