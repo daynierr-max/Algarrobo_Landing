@@ -83,13 +83,6 @@ export default function Home() {
     setYear(new Date().getFullYear());
   }, []);
 
-  useEffect(() => {
-    if ('scrollRestoration' in window.history) {
-      window.history.scrollRestoration = 'manual';
-    }
-    window.scrollTo(0, 0);
-  }, []);
-
 
   return (
     <div className="flex flex-col min-h-[100dvh]">
@@ -194,17 +187,17 @@ export default function Home() {
             <FadeInOnScroll delay={100}>
               <Card className="w-full overflow-hidden">
                 <div className="overflow-x-auto">
-                  <Table>
+                  <Table className="text-base">
                     <TableHeader>
                       <TableRow>
                         {schedule.headers.map((header) => (
-                          <TableHead key={header} className={`font-bold ${header === 'Time' ? 'w-1/6' : ''} text-center`}>{header}</TableHead>
+                          <TableHead key={header} className={`font-bold ${header === 'Time' ? 'w-1/6' : ''} text-center text-lg`}>{header}</TableHead>
                         ))}
                       </TableRow>
                     </TableHeader>
                     <TableBody>
                       {schedule.rows.map((row, rowIndex) => (
-                        <TableRow key={rowIndex}>
+                        <TableRow key={rowIndex} className="even:bg-muted/40">
                           <TableCell className="font-medium text-center">{row.time}</TableCell>
                           {row.activities.map((activity, activityIndex) => (
                             <TableCell key={activityIndex} className="text-center">
@@ -352,3 +345,5 @@ export default function Home() {
     </div>
   );
 }
+
+    
