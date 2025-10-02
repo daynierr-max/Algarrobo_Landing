@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { HeartHandshake, BrainCircuit, Users, UtensilsCrossed, Phone, Bus } from "lucide-react";
+import { HeartHandshake, BrainCircuit, Users, UtensilsCrossed, Phone, Bus, Facebook, Instagram } from "lucide-react";
 import Logo from "@/components/logo";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
 import { useState, useEffect } from "react";
@@ -37,6 +37,24 @@ const services = [
     description: "Safe and reliable transportation to and from our center is available for our members.",
   },
 ];
+
+const WhatsappIcon = (props: React.SVGProps<SVGSVGElement>) => (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      {...props}
+    >
+      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+      <path d="M14.05 16.95A8.91 8.91 0 0 1 12.03 18c-2.4 0-4.3-1.9-4.3-4.3 0-1.4.6-2.6 1.5-3.4a3.14 3.14 0 0 1 4.2-4.2l.2.2" />
+    </svg>
+  );
 
 export default function Home() {
   const aboutImage = PlaceHolderImages.find(p => p.id === 'about-us-care');
@@ -185,15 +203,26 @@ export default function Home() {
         </section>
       </main>
 
-      <footer className="flex flex-col gap-2 sm:flex-row py-6 w-full shrink-0 items-center px-4 md:px-6 border-t">
+      <footer className="flex flex-col gap-4 sm:flex-row py-6 w-full shrink-0 items-center px-4 md:px-6 border-t">
         <p className="text-xs text-muted-foreground">&copy; {year || new Date().getFullYear()} Algarrobo Adult Day Care. All rights reserved.</p>
-        <nav className="sm:ml-auto flex gap-4 sm:gap-6">
-          <Link href="#" className="text-xs hover:underline underline-offset-4" prefetch={false}>
-            Privacy Policy
-          </Link>
-          <Link href="#" className="text-xs hover:underline underline-offset-4" prefetch={false}>
-            Terms of Service
-          </Link>
+        <nav className="sm:ml-auto flex gap-4 sm:gap-6 items-center">
+            <Link href="#" className="text-xs hover:underline underline-offset-4" prefetch={false}>
+                Privacy Policy
+            </Link>
+            <Link href="#" className="text-xs hover:underline underline-offset-4" prefetch={false}>
+                Terms of Service
+            </Link>
+            <div className="flex gap-4">
+                <Link href="#" aria-label="Facebook" prefetch={false}>
+                    <Facebook className="h-5 w-5 hover:text-primary transition-colors" />
+                </Link>
+                <Link href="#" aria-label="Instagram" prefetch={false}>
+                    <Instagram className="h-5 w-5 hover:text-primary transition-colors" />
+                </Link>
+                <Link href="#" aria-label="WhatsApp" prefetch={false}>
+                    <WhatsappIcon className="h-5 w-5 hover:text-primary transition-colors" />
+                </Link>
+            </div>
         </nav>
       </footer>
     </div>
