@@ -37,7 +37,7 @@ export default function Home() {
       <header className="px-4 lg:px-6 h-20 flex items-center justify-between sticky top-0 z-50 w-full border-b border-border/40 bg-background/80 backdrop-blur-sm">
         <div className="flex-1 flex justify-start">
             <Link href="#" className="flex items-center justify-center" prefetch={false}>
-              <Logo />
+              <span className="sr-only">Algarrobo Adult Day Care</span>
             </Link>
         </div>
         
@@ -58,6 +58,7 @@ export default function Home() {
         <section id="hero" className="w-full py-20 md:py-32 lg:py-40">
           <div className="container px-4 md:px-6">
             <div className="flex flex-col items-center space-y-6 text-center">
+              <Logo />
               <div className="max-w-3xl">
                 <h1 className="text-4xl font-headline font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl text-primary">
                   A Warm, Welcoming Day for Your Loved Ones
