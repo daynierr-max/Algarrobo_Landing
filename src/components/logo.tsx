@@ -1,13 +1,7 @@
-import Image from 'next/image';
-
 const Logo = () => (
-  <Image
-    src="/logo.png"
-    alt="Algarrobo Adult Day Care Logo"
-    width={200}
-    height={120}
-    className="h-auto"
-  />
+  <span className="text-2xl font-headline font-bold text-primary">
+    Algarrobo Adult Care
+  </span>
 );
 
 export default Logo;
