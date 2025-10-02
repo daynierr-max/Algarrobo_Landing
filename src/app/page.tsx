@@ -47,7 +47,7 @@ const schedule = {
   rows: [
     { time: "08:00-09:30", activities: ["Breakfast", "Breakfast", "Breakfast", "Breakfast", "Breakfast"] },
     { time: "09:30-10:30", activities: ["Drawings / Exercises", "Puzzle / Exercises", "Clay / Exercises", "Letters / Exercises", "Memory Games / Exercises"] },
-    { time: "10:40-11:30", activities: ["", "Theater / Movies", "", "", ""] },
+    { time: "10:40-11:30", activities: ["", "", "Theater / Movies", "", ""] },
     { time: "11:30-12:30", activities: ["Lunch", "Lunch", "Lunch", "Lunch", "Lunch"] },
     { time: "12:40-16:00", activities: ["Bingo", "Bingo", "Bingo", "Bingo", "Music & Dance"] },
     { time: "13:30-14:00", activities: ["Snacks", "Snacks", "Snacks", "Snacks", "Snacks"] },
