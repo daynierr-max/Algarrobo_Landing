@@ -8,7 +8,7 @@ const Logo = () => (
                 ADULT DAY CARE LLC
             </span>
             <span className="text-[0.6rem] font-bold text-accent-foreground/70 tracking-[0.3em] mt-1">
-                NEGRITAS PREMIUM
+                FAMILY FIRST
             </span>
         </div>
     </div>
