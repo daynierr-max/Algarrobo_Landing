@@ -1,3 +1,4 @@
+
 "use client";
 
 import Image from "next/image";
@@ -179,7 +180,7 @@ export default function Home() {
                     data-ai-hint={aboutImage.imageHint}
                     width={800}
                     height={600}
-                    className="mx-auto aspect-[4/3] overflow-hidden rounded-xl object-cover object-center sm:w-full lg:order-last"
+                    className="mx-auto aspect-[4/3] overflow-hidden rounded-xl object-cover object-center sm:w-full lg:order-last transition-all duration-300 hover:shadow-xl hover:-translate-y-2"
                   />
                 </div>
               </FadeInOnScroll>
@@ -241,3 +242,4 @@ export default function Home() {
     </div>
   );
 }
+
