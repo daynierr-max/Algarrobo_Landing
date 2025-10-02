@@ -35,26 +35,23 @@ export default function Home() {
   return (
     <div className="flex flex-col min-h-[100dvh]">
       <header className="px-4 lg:px-6 py-4 flex items-center justify-between sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-        <div className="flex-1">
-          <nav className="flex items-center gap-4 sm:gap-6">
+        <div className="flex items-center">
+            <Link href="#" className="flex items-center justify-center" prefetch={false}>
+              <Logo />
+            </Link>
+        </div>
+        
+        <nav className="flex items-center gap-4 sm:gap-6">
             <Link href="#services" className="text-sm font-medium hover:underline underline-offset-4 hidden sm:block" prefetch={false}>
               Services
             </Link>
             <Link href="#about" className="text-sm font-medium hover:underline underline-offset-4 hidden sm:block" prefetch={false}>
               About
             </Link>
-          </nav>
-        </div>
-        <div className="flex-1 flex justify-center">
-            <Link href="#" className="flex items-center justify-center" prefetch={false}>
-              <Logo />
-            </Link>
-        </div>
-        <div className="flex-1 flex justify-end">
             <Button asChild>
                 <Link href="#contact">Contact Us</Link>
             </Button>
-        </div>
+        </nav>
       </header>
 
       <main className="flex-1">
