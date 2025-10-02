@@ -5,7 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { HeartHandshake, BrainCircuit, Users, UtensilsCrossed, Phone, Bus, Facebook, Instagram } from "lucide-react";
+import { HeartHandshake, BrainCircuit, Users, UtensilsCrossed, Phone, Bus, Facebook, Instagram, Mail, Building, Clock, Printer } from "lucide-react";
 import Logo from "@/components/logo";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
 import { useState, useEffect } from "react";
@@ -85,7 +85,7 @@ export default function Home() {
               </Link>
           </div>
           
-          <nav className="flex items-center gap-4 sm:gap-6">
+          <nav className="hidden lg:flex items-center gap-4 sm:gap-6">
               <Link href="#services" className="text-sm font-medium hover:underline underline-offset-4" prefetch={false}>
                 Services
               </Link>
@@ -189,7 +189,7 @@ export default function Home() {
         </section>
 
         <section id="contact" className="w-full py-12 md:py-20 lg:py-20 bg-primary/10 border-t">
-          <div className="container grid items-center justify-center gap-4 px-4 text-center md:px-6">
+          <div className="container grid items-center justify-center gap-8 px-4 text-center md:px-6">
             <FadeInOnScroll>
               <div className="space-y-3">
                 <h2 className="text-3xl font-headline font-bold tracking-tighter md:text-4xl/tight text-primary">
@@ -201,13 +201,27 @@ export default function Home() {
               </div>
             </FadeInOnScroll>
             <FadeInOnScroll delay={100}>
-              <div className="mx-auto w-full max-w-sm space-y-2">
-                <Button asChild size="lg" className="w-full">
-                  <a href="tel:+1234567890">
-                    <Phone className="mr-2 h-4 w-4" /> Call Us Today
-                  </a>
-                </Button>
-                <p className="text-xs text-muted-foreground">Or visit us at: 123 Care Street, Anytown, USA</p>
+              <div className="mx-auto w-full max-w-lg space-y-4">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <Button asChild size="lg" className="w-full">
+                        <a href="tel:786-360-7503">
+                            <Phone className="mr-2 h-4 w-4" /> Call Us
+                        </a>
+                    </Button>
+                    <Button asChild size="lg" variant="outline" className="w-full">
+                        <a href="mailto:algarroboadultdaycarellc@gmail.com">
+                            <Mail className="mr-2 h-4 w-4" /> Email Us
+                        </a>
+                    </Button>
+                  </div>
+                  <div className="text-sm text-muted-foreground space-y-2">
+                    <p className="flex items-center justify-center gap-2">
+                        <Building className="h-4 w-4" /> 208 WASHINGTON AVE. • HOMESTEAD, FL 33030
+                    </p>
+                    <p className="flex items-center justify-center gap-2">
+                        <Printer className="h-4 w-4" /> Fax: 786-504-3411
+                    </p>
+                </div>
               </div>
             </FadeInOnScroll>
           </div>
@@ -215,27 +229,50 @@ export default function Home() {
       </main>
 
       <FadeInOnScroll>
-        <footer className="flex flex-col gap-4 sm:flex-row py-6 w-full shrink-0 items-center px-4 md:px-6 border-t">
-          <p className="text-xs text-muted-foreground">&copy; {year || new Date().getFullYear()} Algarrobo Adult Day Care. All rights reserved.</p>
-          <nav className="sm:ml-auto flex gap-4 sm:gap-6 items-center">
-              <Link href="#" className="text-xs hover:underline underline-offset-4" prefetch={false}>
-                  Privacy Policy
-              </Link>
-              <Link href="#" className="text-xs hover:underline underline-offset-4" prefetch={false}>
-                  Terms of Service
-              </Link>
-              <div className="flex gap-4">
-                  <Link href="#" aria-label="Facebook" prefetch={false}>
-                      <Facebook className="h-5 w-5 hover:text-primary transition-colors" />
-                  </Link>
-                  <Link href="#" aria-label="Instagram" prefetch={false}>
-                      <Instagram className="h-5 w-5 hover:text-primary transition-colors" />
-                  </Link>
-                  <Link href="#" aria-label="WhatsApp" prefetch={false}>
-                      <WhatsappIcon className="h-5 w-5 hover:text-primary transition-colors" />
-                  </Link>
+        <footer className="py-8 w-full shrink-0 border-t bg-secondary/40">
+          <div className="container px-4 md:px-6 grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
+              <div className="flex flex-col items-center md:items-start gap-2">
+                  <h3 className="font-headline text-lg font-bold">Horario</h3>
+                  <div className="text-sm text-muted-foreground">
+                      <p className="flex items-center gap-2"><Clock className="h-4 w-4" /> Lunes a Viernes</p>
+                      <p className="ml-6">8:00 am - 4:00 pm</p>
+                  </div>
               </div>
-          </nav>
+              <div className="flex flex-col items-center md:items-start gap-2">
+                  <h3 className="font-headline text-lg font-bold">Contacto</h3>
+                  <div className="text-sm text-muted-foreground space-y-1">
+                      <p className="flex items-center gap-2"><Building className="h-4 w-4" /> 208 WASHINGTON AVE. • HOMESTEAD, FL 33030</p>
+                      <p className="flex items-center gap-2"><Mail className="h-4 w-4" /> algarroboadultdaycarellc@gmail.com</p>
+                      <p className="flex items-center gap-2"><Phone className="h-4 w-4" /> Tel: 786-360-7503</p>
+                      <p className="flex items-center gap-2"><Printer className="h-4 w-4" /> Fax: 786-504-3411</p>
+                  </div>
+              </div>
+              <div className="flex flex-col items-center md:items-start gap-4">
+                  <h3 className="font-headline text-lg font-bold">Síguenos</h3>
+                  <div className="flex gap-4">
+                      <Link href="#" aria-label="Facebook" prefetch={false}>
+                          <Facebook className="h-6 w-6 hover:text-primary transition-colors" />
+                      </Link>
+                      <Link href="#" aria-label="Instagram" prefetch={false}>
+                          <Instagram className="h-6 w-6 hover:text-primary transition-colors" />
+                      </Link>
+                      <Link href="#" aria-label="WhatsApp" prefetch={false}>
+                          <WhatsappIcon className="h-6 w-6 hover:text-primary transition-colors" />
+                      </Link>
+                  </div>
+              </div>
+          </div>
+          <div className="container px-4 md:px-6 mt-8 flex flex-col sm:flex-row justify-between items-center border-t pt-6">
+              <p className="text-xs text-muted-foreground">&copy; {year || new Date().getFullYear()} Algarrobo Adult Day Care. All rights reserved.</p>
+              <nav className="flex gap-4 sm:gap-6 items-center mt-4 sm:mt-0">
+                  <Link href="#" className="text-xs hover:underline underline-offset-4" prefetch={false}>
+                      Privacy Policy
+                  </Link>
+                  <Link href="#" className="text-xs hover:underline underline-offset-4" prefetch={false}>
+                      Terms of Service
+                  </Link>
+              </nav>
+          </div>
         </footer>
       </FadeInOnScroll>
       <ScrollToTopButton />
@@ -243,3 +280,4 @@ export default function Home() {
   );
 }
 
+    
