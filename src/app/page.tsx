@@ -91,7 +91,7 @@ export default function Home() {
       </FadeInOnScroll>
 
       <main className="flex-1">
-        <section id="hero" className="w-full py-20 md:py-32 lg:py-40">
+        <section id="hero" className="w-full py-20 md:py-24 lg:py-32">
           <div className="container px-4 md:px-6">
             <div className="flex flex-col items-center space-y-6 text-center">
               
@@ -118,7 +118,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="services" className="w-full py-12 md:py-24 lg:py-32 bg-secondary/40">
+        <section id="services" className="w-full py-12 md:py-20 lg:py-24 bg-secondary/40">
           <div className="container px-4 md:px-6">
             <FadeInOnScroll>
               <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
@@ -149,7 +149,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="about" className="w-full py-12 md:py-24 lg:py-32">
+        <section id="about" className="w-full py-12 md:py-20 lg:py-24">
           <div className="container grid items-center gap-10 px-4 md:px-6 lg:grid-cols-2 lg:gap-16">
             <FadeInOnScroll>
               <div className="space-y-4">
@@ -179,7 +179,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="contact" className="w-full py-12 md:py-24 lg:py-32 bg-primary/10 border-t">
+        <section id="contact" className="w-full py-12 md:py-20 lg:py-24 bg-primary/10 border-t">
           <div className="container grid items-center justify-center gap-4 px-4 text-center md:px-6">
             <FadeInOnScroll>
               <div className="space-y-3">
@@ -232,5 +232,3 @@ export default function Home() {
     </div>
   );
 }
-
-    
