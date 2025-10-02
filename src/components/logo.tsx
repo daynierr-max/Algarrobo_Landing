@@ -1,6 +1,6 @@
 const Logo = () => (
-    <div className="flex flex-col items-center justify-center">
-        <div className="flex flex-col items-center">
+    <div className="relative flex flex-col items-center justify-center overflow-hidden">
+        <div className="flex flex-col items-center animate-light-sweep">
             <span className="text-3xl font-headline font-bold text-primary tracking-widest">
                 ALGARROBO
             </span>

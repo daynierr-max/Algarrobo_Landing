@@ -102,17 +102,20 @@ export default {
           '0%': { backgroundPosition: '0% 50%' },
           '50%': { backgroundPosition: '100% 50%' },
           '100%': { backgroundPosition: '0% 50%' },
-        }
+        },
+        'light-sweep': {
+          '0%': { 'background-position': '-200% 0' },
+          '100%': { 'background-position': '200% 0' },
+        },
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
         'fade-in-up': 'fade-in-up 1s both',
         'background-pan': 'background-pan 15s ease infinite',
+        'light-sweep': 'light-sweep 2s ease-in-out 1',
       },
     },
   },
   plugins: [require('tailwindcss-animate')],
 } satisfies Config;
-
-    
