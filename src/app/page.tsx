@@ -8,6 +8,7 @@ import { HeartHandshake, BrainCircuit, Users, UtensilsCrossed, Phone, Bus } from
 import Logo from "@/components/logo";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
 import { useState, useEffect } from "react";
+import { FadeInOnScroll } from "@/components/fade-in-on-scroll";
 
 const services = [
   {
@@ -75,44 +76,54 @@ export default function Home() {
             <div className="flex flex-col items-center space-y-6 text-center">
               
               <div className="max-w-3xl">
-                <h1 className="text-4xl font-headline font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl text-primary">
-                  A Warm, Welcoming Day for Your Loved Ones
-                </h1>
-                <p className="mx-auto max-w-[700px] text-foreground/80 md:text-xl mt-6">
-                  Algarrobo Adult Day Care provides a safe, engaging, and caring environment, offering peace of mind for families and joyful days for our members.
-                </p>
+                <FadeInOnScroll>
+                  <h1 className="text-4xl font-headline font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl text-primary">
+                    A Warm, Welcoming Day for Your Loved Ones
+                  </h1>
+                </FadeInOnScroll>
+                <FadeInOnScroll delay={100}>
+                  <p className="mx-auto max-w-[700px] text-foreground/80 md:text-xl mt-6">
+                    Algarrobo Adult Day Care provides a safe, engaging, and caring environment, offering peace of mind for families and joyful days for our members.
+                  </p>
+                </FadeInOnScroll>
               </div>
-              <div className="space-x-4">
-                <Button asChild size="lg">
-                  <Link href="#services">Explore Our Services</Link>
-                </Button>
-              </div>
+              <FadeInOnScroll delay={200}>
+                <div className="space-x-4">
+                  <Button asChild size="lg">
+                    <Link href="#services">Explore Our Services</Link>
+                  </Button>
+                </div>
+              </FadeInOnScroll>
             </div>
           </div>
         </section>
 
         <section id="services" className="w-full py-12 md:py-24 lg:py-32 bg-secondary/40">
           <div className="container px-4 md:px-6">
-            <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
-              <div className="space-y-2">
-                <div className="inline-block rounded-lg bg-accent/20 px-3 py-1 text-sm text-accent-foreground">Our Services</div>
-                <h2 className="text-3xl font-headline font-bold tracking-tighter sm:text-5xl">Comprehensive Care and Connection</h2>
-                <p className="max-w-[900px] text-foreground/80 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                  We offer a range of services designed to enhance quality of life, promote independence, and provide a sense of community.
-                </p>
+            <FadeInOnScroll>
+              <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
+                <div className="space-y-2">
+                  <div className="inline-block rounded-lg bg-accent/20 px-3 py-1 text-sm text-accent-foreground">Our Services</div>
+                  <h2 className="text-3xl font-headline font-bold tracking-tighter sm:text-5xl">Comprehensive Care and Connection</h2>
+                  <p className="max-w-[900px] text-foreground/80 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+                    We offer a range of services designed to enhance quality of life, promote independence, and provide a sense of community.
+                  </p>
+                </div>
               </div>
-            </div>
+            </FadeInOnScroll>
             <div className="mx-auto grid items-start gap-8 sm:max-w-4xl sm:grid-cols-2 md:gap-12 lg:max-w-5xl">
               {services.map((service, index) => (
-                <Card key={index} className="bg-card backdrop-blur-sm transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
-                  <CardHeader className="flex flex-row items-center gap-4 pb-4">
-                    {service.icon}
-                    <CardTitle className="font-headline text-2xl">{service.title}</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-foreground/80">{service.description}</p>
-                  </CardContent>
-                </Card>
+                <FadeInOnScroll key={index} delay={index * 100}>
+                  <Card className="bg-card backdrop-blur-sm transition-all duration-300 hover:shadow-xl hover:-translate-y-1 h-full">
+                    <CardHeader className="flex flex-row items-center gap-4 pb-4">
+                      {service.icon}
+                      <CardTitle className="font-headline text-2xl">{service.title}</CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                      <p className="text-foreground/80">{service.description}</p>
+                    </CardContent>
+                  </Card>
+                </FadeInOnScroll>
               ))}
             </div>
           </div>
@@ -120,48 +131,56 @@ export default function Home() {
 
         <section id="about" className="w-full py-12 md:py-24 lg:py-32">
           <div className="container grid items-center gap-10 px-4 md:px-6 lg:grid-cols-2 lg:gap-16">
-            <div className="space-y-4">
-              <div className="inline-block rounded-lg bg-accent/20 px-3 py-1 text-sm text-accent-foreground">Our Story</div>
-              <h2 className="lg:leading-tighter text-3xl font-headline font-bold tracking-tighter sm:text-4xl md:text-5xl xl:text-[3.4rem] 2xl:text-[3.75rem]">
-                Rooted in Community, Growing with Care
-              </h2>
-              <p className="max-w-[600px] text-foreground/80 md:text-xl/relaxed">
-                Named after the resilient Algarrobo tree, our center was founded on the principles of strength, shelter, and community. We believe in creating a nurturing space where seniors can thrive, connect, and continue to grow. Our mission is to provide exceptional care that feels like family.
-              </p>
-            </div>
-            {aboutImage && (
-              <div className="flex justify-center">
-                 <Image
-                  src={aboutImage.imageUrl}
-                  alt={aboutImage.description}
-                  data-ai-hint={aboutImage.imageHint}
-                  width={800}
-                  height={600}
-                  className="mx-auto aspect-[4/3] overflow-hidden rounded-xl object-cover object-center sm:w-full lg:order-last"
-                />
+            <FadeInOnScroll>
+              <div className="space-y-4">
+                <div className="inline-block rounded-lg bg-accent/20 px-3 py-1 text-sm text-accent-foreground">Our Story</div>
+                <h2 className="lg:leading-tighter text-3xl font-headline font-bold tracking-tighter sm:text-4xl md:text-5xl xl:text-[3.4rem] 2xl:text-[3.75rem]">
+                  Rooted in Community, Growing with Care
+                </h2>
+                <p className="max-w-[600px] text-foreground/80 md:text-xl/relaxed">
+                  Named after the resilient Algarrobo tree, our center was founded on the principles of strength, shelter, and community. We believe in creating a nurturing space where seniors can thrive, connect, and continue to grow. Our mission is to provide exceptional care that feels like family.
+                </p>
               </div>
+            </FadeInOnScroll>
+            {aboutImage && (
+              <FadeInOnScroll delay={100}>
+                <div className="flex justify-center">
+                   <Image
+                    src={aboutImage.imageUrl}
+                    alt={aboutImage.description}
+                    data-ai-hint={aboutImage.imageHint}
+                    width={800}
+                    height={600}
+                    className="mx-auto aspect-[4/3] overflow-hidden rounded-xl object-cover object-center sm:w-full lg:order-last"
+                  />
+                </div>
+              </FadeInOnScroll>
             )}
           </div>
         </section>
 
         <section id="contact" className="w-full py-12 md:py-24 lg:py-32 bg-primary/10 border-t">
           <div className="container grid items-center justify-center gap-4 px-4 text-center md:px-6">
-            <div className="space-y-3">
-              <h2 className="text-3xl font-headline font-bold tracking-tighter md:text-4xl/tight text-primary">
-                Ready to Join Our Family?
-              </h2>
-              <p className="mx-auto max-w-[600px] text-foreground/80 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                We're here to answer your questions and welcome you to the Algarrobo community. Reach out to schedule a visit or learn more about enrollment.
-              </p>
-            </div>
-            <div className="mx-auto w-full max-w-sm space-y-2">
-              <Button asChild size="lg" className="w-full">
-                <a href="tel:+1234567890">
-                  <Phone className="mr-2 h-4 w-4" /> Call Us Today
-                </a>
-              </Button>
-              <p className="text-xs text-muted-foreground">Or visit us at: 123 Care Street, Anytown, USA</p>
-            </div>
+            <FadeInOnScroll>
+              <div className="space-y-3">
+                <h2 className="text-3xl font-headline font-bold tracking-tighter md:text-4xl/tight text-primary">
+                  Ready to Join Our Family?
+                </h2>
+                <p className="mx-auto max-w-[600px] text-foreground/80 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+                  We're here to answer your questions and welcome you to the Algarrobo community. Reach out to schedule a visit or learn more about enrollment.
+                </p>
+              </div>
+            </FadeInOnScroll>
+            <FadeInOnScroll delay={100}>
+              <div className="mx-auto w-full max-w-sm space-y-2">
+                <Button asChild size="lg" className="w-full">
+                  <a href="tel:+1234567890">
+                    <Phone className="mr-2 h-4 w-4" /> Call Us Today
+                  </a>
+                </Button>
+                <p className="text-xs text-muted-foreground">Or visit us at: 123 Care Street, Anytown, USA</p>
+              </div>
+            </FadeInOnScroll>
           </div>
         </section>
       </main>
