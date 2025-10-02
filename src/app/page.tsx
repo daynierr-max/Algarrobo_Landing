@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { HeartHandshake, BrainCircuit, Users, UtensilsCrossed, Phone } from "lucide-react";
+import { HeartHandshake, BrainCircuit, Users, UtensilsCrossed, Phone, Bus } from "lucide-react";
 import Logo from "@/components/logo";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
 import { useState, useEffect } from "react";
@@ -29,6 +29,11 @@ const services = [
     icon: <UtensilsCrossed className="h-10 w-10 text-primary" />,
     title: "Nutritious Meals & Snacks",
     description: "Enjoy delicious, home-cooked meals and snacks prepared fresh daily to meet dietary needs.",
+  },
+  {
+    icon: <Bus className="h-10 w-10 text-primary" />,
+    title: "Door-to-Door Transportation",
+    description: "Safe and reliable transportation to and from our center is available for our members.",
   },
 ];
 
