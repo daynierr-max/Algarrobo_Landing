@@ -67,26 +67,28 @@ export default function Home() {
 
   return (
     <div className="flex flex-col min-h-[100dvh]">
-      <header className="px-4 lg:px-6 h-24 flex items-center justify-between sticky top-0 z-50 w-full border-b border-border/40 bg-background/80 backdrop-blur-sm">
-        <div className="flex items-center">
-            <Link href="#" className="flex items-center justify-center" prefetch={false}>
-              <Logo />
-              <span className="sr-only">Algarrobo Adult Day Care</span>
-            </Link>
-        </div>
-        
-        <nav className="flex items-center gap-4 sm:gap-6">
-            <Link href="#services" className="text-sm font-medium hover:underline underline-offset-4" prefetch={false}>
-              Services
-            </Link>
-            <Link href="#about" className="text-sm font-medium hover:underline underline-offset-4" prefetch={false}>
-              About
-            </Link>
-            <Button asChild>
-                <Link href="#contact">Contact Us</Link>
-            </Button>
-        </nav>
-      </header>
+      <FadeInOnScroll>
+        <header className="px-4 lg:px-6 h-24 flex items-center justify-between sticky top-0 z-50 w-full border-b border-border/40 bg-background/80 backdrop-blur-sm">
+          <div className="flex items-center">
+              <Link href="#" className="flex items-center justify-center" prefetch={false}>
+                <Logo />
+                <span className="sr-only">Algarrobo Adult Day Care</span>
+              </Link>
+          </div>
+          
+          <nav className="flex items-center gap-4 sm:gap-6">
+              <Link href="#services" className="text-sm font-medium hover:underline underline-offset-4" prefetch={false}>
+                Services
+              </Link>
+              <Link href="#about" className="text-sm font-medium hover:underline underline-offset-4" prefetch={false}>
+                About
+              </Link>
+              <Button asChild>
+                  <Link href="#contact">Contact Us</Link>
+              </Button>
+          </nav>
+        </header>
+      </FadeInOnScroll>
 
       <main className="flex-1">
         <section id="hero" className="w-full py-20 md:py-32 lg:py-40">
@@ -203,28 +205,30 @@ export default function Home() {
         </section>
       </main>
 
-      <footer className="flex flex-col gap-4 sm:flex-row py-6 w-full shrink-0 items-center px-4 md:px-6 border-t">
-        <p className="text-xs text-muted-foreground">&copy; {year || new Date().getFullYear()} Algarrobo Adult Day Care. All rights reserved.</p>
-        <nav className="sm:ml-auto flex gap-4 sm:gap-6 items-center">
-            <Link href="#" className="text-xs hover:underline underline-offset-4" prefetch={false}>
-                Privacy Policy
-            </Link>
-            <Link href="#" className="text-xs hover:underline underline-offset-4" prefetch={false}>
-                Terms of Service
-            </Link>
-            <div className="flex gap-4">
-                <Link href="#" aria-label="Facebook" prefetch={false}>
-                    <Facebook className="h-5 w-5 hover:text-primary transition-colors" />
-                </Link>
-                <Link href="#" aria-label="Instagram" prefetch={false}>
-                    <Instagram className="h-5 w-5 hover:text-primary transition-colors" />
-                </Link>
-                <Link href="#" aria-label="WhatsApp" prefetch={false}>
-                    <WhatsappIcon className="h-5 w-5 hover:text-primary transition-colors" />
-                </Link>
-            </div>
-        </nav>
-      </footer>
+      <FadeInOnScroll>
+        <footer className="flex flex-col gap-4 sm:flex-row py-6 w-full shrink-0 items-center px-4 md:px-6 border-t">
+          <p className="text-xs text-muted-foreground">&copy; {year || new Date().getFullYear()} Algarrobo Adult Day Care. All rights reserved.</p>
+          <nav className="sm:ml-auto flex gap-4 sm:gap-6 items-center">
+              <Link href="#" className="text-xs hover:underline underline-offset-4" prefetch={false}>
+                  Privacy Policy
+              </Link>
+              <Link href="#" className="text-xs hover:underline underline-offset-4" prefetch={false}>
+                  Terms of Service
+              </Link>
+              <div className="flex gap-4">
+                  <Link href="#" aria-label="Facebook" prefetch={false}>
+                      <Facebook className="h-5 w-5 hover:text-primary transition-colors" />
+                  </Link>
+                  <Link href="#" aria-label="Instagram" prefetch={false}>
+                      <Instagram className="h-5 w-5 hover:text-primary transition-colors" />
+                  </Link>
+                  <Link href="#" aria-label="WhatsApp" prefetch={false}>
+                      <WhatsappIcon className="h-5 w-5 hover:text-primary transition-colors" />
+                  </Link>
+              </div>
+          </nav>
+        </footer>
+      </FadeInOnScroll>
     </div>
   );
 }
