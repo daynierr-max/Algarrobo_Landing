@@ -55,6 +55,7 @@ const schedule = {
   ]
 };
 
+const aboutImage = PlaceHolderImages.find(p => p.id === 'about-us-care');
 
 const WhatsappIcon = (props: React.SVGProps<SVGSVGElement>) => (
     <svg
@@ -223,18 +224,32 @@ export default function Home() {
 
         <section id="about" className="w-full py-12 md:py-20 lg:py-24">
           <div className="container px-4 md:px-6">
-            <div className="flex flex-col items-center space-y-8 text-center">
-              <FadeInOnScroll>
-                <div className="space-y-4 max-w-3xl">
-                    <div className="inline-block rounded-lg bg-accent/20 px-3 py-1 text-sm text-accent-foreground">Our Story</div>
-                    <h2 className="lg:leading-tighter text-3xl font-headline font-bold tracking-tighter sm:text-4xl md:text-5xl">
-                      Rooted in Community, Growing with Care
-                    </h2>
-                    <p className="mx-auto max-w-[700px] text-foreground/80 md:text-xl/relaxed">
-                      Named after the resilient Algarrobo tree, our center was founded on the principles of strength, shelter, and community. We believe in creating a nurturing space where seniors can thrive, connect, and continue to grow. Our mission is to provide exceptional care that feels like family.
-                    </p>
-                </div>
+            <div className="grid gap-10 lg:grid-cols-2 lg:gap-16 items-center">
+               <FadeInOnScroll>
+                {aboutImage && (
+                  <Image
+                    alt={aboutImage.description}
+                    className="mx-auto aspect-video overflow-hidden rounded-xl object-cover"
+                    height="400"
+                    src={aboutImage.imageUrl}
+                    width="600"
+                    data-ai-hint={aboutImage.imageHint}
+                  />
+                )}
               </FadeInOnScroll>
+              <div className="flex flex-col items-start space-y-4 text-center lg:text-left">
+                  <FadeInOnScroll>
+                    <div className="space-y-4">
+                        <div className="inline-block rounded-lg bg-accent/20 px-3 py-1 text-sm text-accent-foreground">Our Story</div>
+                        <h2 className="lg:leading-tighter text-3xl font-headline font-bold tracking-tighter sm:text-4xl md:text-5xl">
+                          Rooted in Community, Growing with Care
+                        </h2>
+                        <p className="mx-auto max-w-[700px] text-foreground/80 md:text-xl/relaxed">
+                          Named after the resilient Algarrobo tree, our center was founded on the principles of strength, shelter, and community. We believe in creating a nurturing space where seniors can thrive, connect, and continue to grow. Our mission is to provide exceptional care that feels like family.
+                        </p>
+                    </div>
+                  </FadeInOnScroll>
+              </div>
             </div>
           </div>
         </section>
