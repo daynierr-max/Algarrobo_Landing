@@ -76,6 +76,7 @@ const WhatsappIcon = (props: React.SVGProps<SVGSVGElement>) => (
 
 export default function Home() {
   const aboutImage = PlaceHolderImages.find(p => p.id === 'about-us-care');
+  const transportImage = PlaceHolderImages.find(p => p.id === 'transport-van');
   const [year, setYear] = useState<number | null>(null);
   const mapsUrl = "https://www.google.com/maps/search/?api=1&query=208%20WASHINGTON%20AVE.%20HOMESTEAD,%20FL%2033030";
 
@@ -219,6 +220,20 @@ export default function Home() {
                 </div>
               </Card>
             </FadeInOnScroll>
+            {transportImage && (
+              <FadeInOnScroll delay={200}>
+                <div className="mt-12 flex justify-center">
+                  <Image
+                    src={transportImage.imageUrl}
+                    alt={transportImage.description}
+                    data-ai-hint={transportImage.imageHint}
+                    width={1200}
+                    height={800}
+                    className="mx-auto aspect-[3/2] overflow-hidden rounded-xl object-contain object-center sm:w-full lg:max-w-4xl transition-all duration-300 hover:shadow-xl"
+                  />
+                </div>
+              </FadeInOnScroll>
+            )}
           </div>
         </section>
 
@@ -353,3 +368,4 @@ export default function Home() {
 }
 
     
+
