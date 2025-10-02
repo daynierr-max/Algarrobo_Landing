@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
@@ -5,6 +7,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { HeartHandshake, BrainCircuit, Users, UtensilsCrossed, Phone } from "lucide-react";
 import Logo from "@/components/logo";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
+import { useState, useEffect } from "react";
 
 const services = [
   {
@@ -31,6 +34,12 @@ const services = [
 
 export default function Home() {
   const aboutImage = PlaceHolderImages.find(p => p.id === 'about-us-care');
+  const [year, setYear] = useState<number | null>(null);
+
+  useEffect(() => {
+    setYear(new Date().getFullYear());
+  }, []);
+
 
   return (
     <div className="flex flex-col min-h-[100dvh]">
@@ -153,7 +162,7 @@ export default function Home() {
       </main>
 
       <footer className="flex flex-col gap-2 sm:flex-row py-6 w-full shrink-0 items-center px-4 md:px-6 border-t">
-        <p className="text-xs text-muted-foreground">&copy; {new Date().getFullYear()} Algarrobo Adult Day Care. All rights reserved.</p>
+        <p className="text-xs text-muted-foreground">&copy; {year || new Date().getFullYear()} Algarrobo Adult Day Care. All rights reserved.</p>
         <nav className="sm:ml-auto flex gap-4 sm:gap-6">
           <Link href="#" className="text-xs hover:underline underline-offset-4" prefetch={false}>
             Privacy Policy
