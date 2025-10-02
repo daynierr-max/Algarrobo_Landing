@@ -2,9 +2,9 @@
   "placeholderImages": [
     {
       "id": "about-us-care",
-      "description": "A group of happy and vibrant seniors enjoying an activity together.",
-      "imageUrl": "https://images.unsplash.com/photo-1532329683184-6ffd13057d1c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxoYXBweSUyMHNlbmlvcnN8ZW58MHx8fHwxNzU5NDEzNzcxfDA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "happy seniors"
+      "description": "Un grupo diverso de personas mayores felices participando en una actividad.",
+      "imageUrl": "https://images.unsplash.com/photo-1550410434-a739097a224a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxkaXZlcnNlJTIwc2VuaW9yc3xlbnwwfHx8fDE3NTk0MTQwMjl8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "diverse seniors"
     }
   ]
 }
