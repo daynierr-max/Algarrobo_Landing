@@ -67,28 +67,26 @@ export default function Home() {
 
   return (
     <div className="flex flex-col min-h-[100dvh]">
-      <FadeInOnScroll>
-        <header className="px-4 lg:px-6 h-24 flex items-center justify-between sticky top-0 z-50 w-full border-b border-border/40 bg-background/80 backdrop-blur-sm">
-          <div className="flex items-center">
-              <Link href="#" className="flex items-center justify-center" prefetch={false}>
-                <Logo />
-                <span className="sr-only">Algarrobo Adult Day Care</span>
-              </Link>
-          </div>
-          
-          <nav className="flex items-center gap-4 sm:gap-6">
-              <Link href="#services" className="text-sm font-medium hover:underline underline-offset-4" prefetch={false}>
-                Services
-              </Link>
-              <Link href="#about" className="text-sm font-medium hover:underline underline-offset-4" prefetch={false}>
-                About
-              </Link>
-              <Button asChild>
-                  <Link href="#contact">Contact Us</Link>
-              </Button>
-          </nav>
-        </header>
-      </FadeInOnScroll>
+      <header className="px-4 lg:px-6 h-24 flex items-center justify-between sticky top-0 z-50 w-full border-b border-border/40 bg-background/80 backdrop-blur-sm">
+        <div className="flex items-center">
+            <Link href="#" className="flex items-center justify-center" prefetch={false}>
+              <Logo />
+              <span className="sr-only">Algarrobo Adult Day Care</span>
+            </Link>
+        </div>
+        
+        <nav className="flex items-center gap-4 sm:gap-6">
+            <Link href="#services" className="text-sm font-medium hover:underline underline-offset-4" prefetch={false}>
+              Services
+            </Link>
+            <Link href="#about" className="text-sm font-medium hover:underline underline-offset-4" prefetch={false}>
+              About
+            </Link>
+            <Button asChild>
+                <Link href="#contact">Contact Us</Link>
+            </Button>
+        </nav>
+      </header>
 
       <main className="flex-1">
         <section id="hero" className="w-full py-20 md:py-24 lg:py-32">
