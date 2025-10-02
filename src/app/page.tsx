@@ -90,7 +90,7 @@ export default function Home() {
               <Link href="#about" className="text-sm font-medium hover:underline underline-offset-4" prefetch={false}>
                 About
               </Link>
-              <Button asChild>
+              <Button asChild className="btn-gradient">
                   <Link href="#contact">Contact Us</Link>
               </Button>
           </nav>
