@@ -91,7 +91,7 @@ export default function Home() {
                 About
               </Link>
               <Button asChild className="btn-gradient">
-                  <Link href="#contact">Contact Us</Link>
+                  <Link href="#contact"><span>Contact Us</span></Link>
               </Button>
           </nav>
         </header>
