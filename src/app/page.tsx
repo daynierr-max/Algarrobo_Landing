@@ -325,7 +325,7 @@ export default function Home() {
                       <Link href="#" aria-label="Facebook" prefetch={false}>
                           <Facebook className="h-6 w-6 hover:text-primary transition-colors" />
                       </Link>
-                      <Link href="#" aria-label="Instagram" prefetch={false}>
+                      <Link href="https://www.instagram.com/algarrobo_adult_day_care/" aria-label="Instagram" prefetch={false} target="_blank" rel="noopener noreferrer">
                           <Instagram className="h-6 w-6 hover:text-primary transition-colors" />
                       </Link>
                       <Link href="#" aria-label="WhatsApp" prefetch={false}>
