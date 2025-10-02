@@ -61,6 +61,7 @@ const WhatsappIcon = (props: React.SVGProps<SVGSVGElement>) => (
 export default function Home() {
   const aboutImage = PlaceHolderImages.find(p => p.id === 'about-us-care');
   const [year, setYear] = useState<number | null>(null);
+  const mapsUrl = "https://www.google.com/maps/search/?api=1&query=208%20WASHINGTON%20AVE.%20HOMESTEAD,%20FL%2033030";
 
   useEffect(() => {
     setYear(new Date().getFullYear());
@@ -215,9 +216,9 @@ export default function Home() {
                     </Button>
                   </div>
                   <div className="text-sm text-muted-foreground space-y-2">
-                    <p className="flex items-center justify-center gap-2">
-                        <Building className="h-4 w-4" /> 208 WASHINGTON AVE. • HOMESTEAD, FL 33030
-                    </p>
+                    <a href={mapsUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 hover:underline">
+                      <Building className="h-4 w-4" /> 208 WASHINGTON AVE. • HOMESTEAD, FL 33030
+                    </a>
                     <p className="flex items-center justify-center gap-2">
                         <Printer className="h-4 w-4" /> Fax: 786-504-3411
                     </p>
@@ -241,10 +242,18 @@ export default function Home() {
               <div className="flex flex-col items-center md:items-start gap-2">
                   <h3 className="font-headline text-lg font-bold">Contacto</h3>
                   <div className="text-sm text-muted-foreground space-y-1">
-                      <p className="flex items-center gap-2"><Building className="h-4 w-4" /> 208 WASHINGTON AVE. • HOMESTEAD, FL 33030</p>
-                      <p className="flex items-center gap-2"><Mail className="h-4 w-4" /> algarroboadultdaycarellc@gmail.com</p>
-                      <p className="flex items-center gap-2"><Phone className="h-4 w-4" /> Tel: 786-360-7503</p>
-                      <p className="flex items-center gap-2"><Printer className="h-4 w-4" /> Fax: 786-504-3411</p>
+                      <a href={mapsUrl} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:underline">
+                          <Building className="h-4 w-4" /> 208 WASHINGTON AVE. • HOMESTEAD, FL 33030
+                      </a>
+                      <a href="mailto:algarroboadultdaycarellc@gmail.com" className="flex items-center gap-2 hover:underline">
+                          <Mail className="h-4 w-4" /> algarroboadultdaycarellc@gmail.com
+                      </a>
+                      <a href="tel:786-360-7503" className="flex items-center gap-2 hover:underline">
+                          <Phone className="h-4 w-4" /> Tel: 786-360-7503
+                      </a>
+                      <p className="flex items-center gap-2">
+                          <Printer className="h-4 w-4" /> Fax: 786-504-3411
+                      </p>
                   </div>
               </div>
               <div className="flex flex-col items-center md:items-start gap-4">
@@ -279,5 +288,3 @@ export default function Home() {
     </div>
   );
 }
-
-    
