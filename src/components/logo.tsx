@@ -1,7 +1,7 @@
 const Logo = () => (
-    <div className="relative flex flex-col items-center justify-center overflow-hidden">
-        <div className="flex flex-col items-center animate-light-sweep">
-            <span className="text-3xl font-headline font-bold text-primary tracking-widest">
+    <div className="logo-container relative flex flex-col items-center justify-center overflow-hidden">
+        <div className="flex flex-col items-center">
+            <span className="text-3xl font-headline font-bold text-primary tracking-widest light-sweep">
                 ALGARROBO
             </span>
             <span className="text-xs font-semibold text-primary/90 tracking-[0.2em] mt-1">
