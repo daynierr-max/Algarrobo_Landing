@@ -31,7 +31,7 @@ const services = [
     description: "We offer programs designed to engage the mind, promoting mental acuity and well-being.",
   },
   {
-    icon: <UtensilsCrossed className="h-10 w-10 text.primary" />,
+    icon: <UtensilsCrossed className="h-10 w-10 text-primary" />,
     title: "Nutritious Meals & Snacks",
     description: "Enjoy delicious, home-cooked meals and snacks prepared fresh daily to meet dietary needs.",
   },
@@ -206,7 +206,7 @@ export default function Home() {
                         <TableRow key={rowIndex} className="even:bg-muted/40">
                           <TableCell className="font-medium text-center">{row.time}</TableCell>
                           {row.activities.map((activity, activityIndex) => (
-                            <TableCell key={activityIndex} className="text-center text-accent-foreground/90">
+                            <TableCell key={activityIndex} className="text-center text-foreground/90">
                               {activity.split(' / ').map((part, partIndex) => (
                                 <span key={partIndex} className="block">{part}</span>
                               ))}
