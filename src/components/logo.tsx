@@ -1,5 +1,5 @@
 const Logo = () => (
-  <div className="flex flex-col">
+  <div className="flex flex-col items-center">
     <span className="text-3xl font-headline font-bold text-primary leading-tight">
       ALGARROBO
     </span>
