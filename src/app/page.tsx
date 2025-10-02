@@ -83,6 +83,12 @@ export default function Home() {
     setYear(new Date().getFullYear());
   }, []);
 
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      window.scrollTo(0, 0);
+    }
+  }, []);
+
 
   return (
     <div className="flex flex-col min-h-[100dvh]">
