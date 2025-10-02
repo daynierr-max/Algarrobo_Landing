@@ -193,7 +193,7 @@ export default function Home() {
             <FadeInOnScroll delay={100}>
               <Card className="w-full overflow-hidden">
                 <div className="overflow-x-auto">
-                  <Table className="text-base">
+                  <Table className="text-lg">
                     <TableHeader>
                       <TableRow>
                         {schedule.headers.map((header) => (
@@ -206,7 +206,7 @@ export default function Home() {
                         <TableRow key={rowIndex} className="even:bg-muted/40">
                           <TableCell className="font-medium text-center">{row.time}</TableCell>
                           {row.activities.map((activity, activityIndex) => (
-                            <TableCell key={activityIndex} className="text-center">
+                            <TableCell key={activityIndex} className="text-center text-accent-foreground/90">
                               {activity.split(' / ').map((part, partIndex) => (
                                 <span key={partIndex} className="block">{part}</span>
                               ))}
