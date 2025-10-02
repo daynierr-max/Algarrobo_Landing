@@ -92,7 +92,7 @@ export default function Home() {
               <Link href="#about" className="text-sm font-medium hover:underline underline-offset-4" prefetch={false}>
                 About
               </Link>
-              <Button asChild className="btn-gradient">
+              <Button asChild className="btn-gradient transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
                   <Link href="#contact"><span>Contact Us</span></Link>
               </Button>
           </nav>
