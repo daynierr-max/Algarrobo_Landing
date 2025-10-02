@@ -2,9 +2,9 @@
   "placeholderImages": [
     {
       "id": "about-us-care",
-      "description": "A compassionate caregiver assisting an elderly person, both are smiling.",
-      "imageUrl": "https://images.unsplash.com/photo-1569245090430-9255968c4877?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxjYXJlZ2l2ZXIlMjBzZW5pb3J8ZW58MHx8fHwxNzU5NDA2NDY4fDA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "caregiver senior"
+      "description": "A group of happy and vibrant seniors enjoying an activity together.",
+      "imageUrl": "https://images.unsplash.com/photo-1541795795328-f4e194c257b4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHx2aWJyYW50JTIwc2VuaW9yc3xlbnwwfHx8fDE3NjM0MTEzMDV8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "happy seniors"
     }
   ]
 }
