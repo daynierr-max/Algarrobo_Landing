@@ -7,7 +7,7 @@ const Logo = () => (
             <span className="text-xs font-semibold text-primary/90 tracking-[0.2em] mt-1">
                 ADULT DAY CARE LLC
             </span>
-            <span className="text-[0.6rem] font-bold text-accent-foreground/70 tracking-[0.3em] mt-1">
+            <span className="text-[0.6rem] font-bold text-primary/80 tracking-[0.3em] mt-1">
                 FAMILY FIRST
             </span>
         </div>
