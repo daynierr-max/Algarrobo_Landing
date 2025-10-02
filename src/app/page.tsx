@@ -110,7 +110,7 @@ export default function Home() {
                 </FadeInOnScroll>
                 <FadeInOnScroll delay={100}>
                   <p className="mx-auto max-w-[700px] text-foreground/80 md:text-xl mt-6">
-                    Algarrobo Adult Day Care provides a safe, engaging, and caring environment, offering peace of mind for families and joyful days for our members.
+                    Algarrobo Adult Day Care provides a safe, engaging, and caring environment, offering peace of mind for families and joyful days for our members. A space where laughter is the best therapy. Caring for our adults with love and joy.
                   </p>
                 </FadeInOnScroll>
               </div>
