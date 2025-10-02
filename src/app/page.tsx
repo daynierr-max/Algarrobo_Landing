@@ -9,6 +9,7 @@ import Logo from "@/components/logo";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
 import { useState, useEffect } from "react";
 import { FadeInOnScroll } from "@/components/fade-in-on-scroll";
+import { ScrollToTopButton } from "@/components/scroll-to-top-button";
 
 const services = [
   {
@@ -236,6 +237,7 @@ export default function Home() {
           </nav>
         </footer>
       </FadeInOnScroll>
+      <ScrollToTopButton />
     </div>
   );
 }
