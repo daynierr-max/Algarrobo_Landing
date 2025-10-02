@@ -11,6 +11,8 @@ import { PlaceHolderImages } from "@/lib/placeholder-images";
 import { useState, useEffect } from "react";
 import { FadeInOnScroll } from "@/components/fade-in-on-scroll";
 import { ScrollToTopButton } from "@/components/scroll-to-top-button";
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
+import { Badge } from "@/components/ui/badge";
 
 const services = [
   {
@@ -39,6 +41,20 @@ const services = [
     description: "Safe and reliable transportation to and from our center is available for our members.",
   },
 ];
+
+const schedule = {
+  headers: ["Time", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+  rows: [
+    { time: "08:00-09:30", activities: ["Breakfast", "Breakfast", "Breakfast", "Breakfast", "Breakfast"] },
+    { time: "09:30-10:30", activities: ["Drawings / Exercises", "Puzzle / Exercises", "Clay / Exercises", "Letters / Exercises", "Memory Games / Exercises"] },
+    { time: "10:40-11:30", activities: ["", "Theater / Movies", "", "", ""] },
+    { time: "11:30-12:30", activities: ["Lunch", "Lunch", "Lunch", "Lunch", "Lunch"] },
+    { time: "12:40-16:00", activities: ["Bingo", "Bingo", "Bingo", "Bingo", "Music & Dance"] },
+    { time: "13:30-14:00", activities: ["Snacks", "Snacks", "Snacks", "Snacks", "Snacks"] },
+    { time: "14:50-17:00", activities: ["Transportation", "Transportation", "Transportation", "Transportation", "Transportation"] },
+  ]
+};
+
 
 const WhatsappIcon = (props: React.SVGProps<SVGSVGElement>) => (
     <svg
@@ -89,6 +105,9 @@ export default function Home() {
           <nav className="hidden lg:flex items-center gap-4 sm:gap-6">
               <Link href="#services" className="text-sm font-medium hover:underline underline-offset-4" prefetch={false}>
                 Services
+              </Link>
+              <Link href="#schedule" className="text-sm font-medium hover:underline underline-offset-4" prefetch={false}>
+                Schedule
               </Link>
               <Link href="#about" className="text-sm font-medium hover:underline underline-offset-4" prefetch={false}>
                 About
@@ -159,7 +178,52 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="about" className="w-full py-12 md:py-20 lg:py-20">
+        <section id="schedule" className="w-full py-12 md:py-20 lg:py-20">
+          <div className="container px-4 md:px-6">
+            <FadeInOnScroll>
+              <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
+                <div className="space-y-2">
+                  <div className="inline-block rounded-lg bg-accent/20 px-3 py-1 text-sm text-accent-foreground">Weekly Schedule</div>
+                  <h2 className="text-3xl font-headline font-bold tracking-tighter sm:text-5xl">A Day Full of Joy</h2>
+                  <p className="max-w-[900px] text-foreground/80 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+                    Our days are packed with engaging activities to stimulate the mind and body. Here’s a glimpse into our weekly routine.
+                  </p>
+                </div>
+              </div>
+            </FadeInOnScroll>
+            <FadeInOnScroll delay={100}>
+              <Card className="w-full overflow-hidden">
+                <div className="overflow-x-auto">
+                  <Table>
+                    <TableHeader>
+                      <TableRow>
+                        {schedule.headers.map((header) => (
+                          <TableHead key={header} className={`font-bold ${header === 'Time' ? 'w-1/6' : ''} text-center`}>{header}</TableHead>
+                        ))}
+                      </TableRow>
+                    </TableHeader>
+                    <TableBody>
+                      {schedule.rows.map((row, rowIndex) => (
+                        <TableRow key={rowIndex}>
+                          <TableCell className="font-medium text-center">{row.time}</TableCell>
+                          {row.activities.map((activity, activityIndex) => (
+                            <TableCell key={activityIndex} className="text-center">
+                              {activity.split(' / ').map((part, partIndex) => (
+                                <span key={partIndex} className="block">{part}</span>
+                              ))}
+                            </TableCell>
+                          ))}
+                        </TableRow>
+                      ))}
+                    </TableBody>
+                  </Table>
+                </div>
+              </Card>
+            </FadeInOnScroll>
+          </div>
+        </section>
+
+        <section id="about" className="w-full py-12 md:py-20 lg:py-20 bg-secondary/40">
           <div className="container grid items-center gap-10 px-4 md:px-6 lg:grid-cols-2 lg:gap-16">
             <FadeInOnScroll>
               <div className="space-y-4">
