@@ -91,7 +91,7 @@ export default {
         'fade-in-up': {
           from: {
             opacity: '0',
-            transform: 'translateY(1rem)',
+            transform: 'translateY(2rem)',
           },
           to: {
             opacity: '1',
@@ -102,9 +102,11 @@ export default {
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
-        'fade-in-up': 'fade-in-up 0.7s both',
+        'fade-in-up': 'fade-in-up 1s both',
       },
     },
   },
   plugins: [require('tailwindcss-animate')],
 } satisfies Config;
+
+    
