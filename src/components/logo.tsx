@@ -1,14 +1,6 @@
 const Logo = () => (
-    <div className="flex flex-col items-center justify-center mb-8">
-        <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 100 100"
-            className="h-24 w-24 text-primary"
-            fill="currentColor"
-        >
-            <path d="M50 20C35 20 25 35 25 45c0 8 5 15 10 15h-5c-5 0-10 5-10 10v10h60V70c0-5-5-10-10-10h-5c5-0 10-7 10-15C75 35 65 20 50 20zM40 60V45c0-5.52 4.48-10 10-10s10 4.48 10 10v15H40z" />
-        </svg>
-        <div className="flex flex-col items-center mt-4">
+    <div className="flex flex-col items-center justify-center">
+        <div className="flex flex-col items-center">
             <span className="text-3xl font-headline font-bold text-primary tracking-widest">
                 ALGARROBO
             </span>

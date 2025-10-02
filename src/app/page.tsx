@@ -34,18 +34,19 @@ export default function Home() {
 
   return (
     <div className="flex flex-col min-h-[100dvh]">
-      <header className="px-4 lg:px-6 h-20 flex items-center justify-between sticky top-0 z-50 w-full border-b border-border/40 bg-background/80 backdrop-blur-sm">
-        <div className="flex-1 flex justify-start">
+      <header className="px-4 lg:px-6 h-24 flex items-center justify-between sticky top-0 z-50 w-full border-b border-border/40 bg-background/80 backdrop-blur-sm">
+        <div className="flex items-center">
             <Link href="#" className="flex items-center justify-center" prefetch={false}>
+              <Logo />
               <span className="sr-only">Algarrobo Adult Day Care</span>
             </Link>
         </div>
         
-        <nav className="flex-1 flex justify-end items-center gap-4 sm:gap-6">
-            <Link href="#services" className="text-sm font-medium hover:underline underline-offset-4 hidden sm:block" prefetch={false}>
+        <nav className="flex items-center gap-4 sm:gap-6">
+            <Link href="#services" className="text-sm font-medium hover:underline underline-offset-4" prefetch={false}>
               Services
             </Link>
-            <Link href="#about" className="text-sm font-medium hover:underline underline-offset-4 hidden sm:block" prefetch={false}>
+            <Link href="#about" className="text-sm font-medium hover:underline underline-offset-4" prefetch={false}>
               About
             </Link>
             <Button asChild>
@@ -58,7 +59,7 @@ export default function Home() {
         <section id="hero" className="w-full py-20 md:py-32 lg:py-40">
           <div className="container px-4 md:px-6">
             <div className="flex flex-col items-center space-y-6 text-center">
-              <Logo />
+              
               <div className="max-w-3xl">
                 <h1 className="text-4xl font-headline font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl text-primary">
                   A Warm, Welcoming Day for Your Loved Ones
