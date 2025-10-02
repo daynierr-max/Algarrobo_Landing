@@ -31,7 +31,7 @@ const services = [
     description: "We offer programs designed to engage the mind, promoting mental acuity and well-being.",
   },
   {
-    icon: <UtensilsCrossed className="h-10 w-10 text-primary" />,
+    icon: <UtensilsCrossed className="h-10 w-10 text.primary" />,
     title: "Nutritious Meals & Snacks",
     description: "Enjoy delicious, home-cooked meals and snacks prepared fresh daily to meet dietary needs.",
   },
@@ -76,6 +76,7 @@ const WhatsappIcon = (props: React.SVGProps<SVGSVGElement>) => (
 
 export default function Home() {
   const aboutImage = PlaceHolderImages.find(p => p.id === 'about-us-care');
+  const transportVanImage = PlaceHolderImages.find(p => p.id === 'transport-van');
   const [year, setYear] = useState<number | null>(null);
   const mapsUrl = "https://www.google.com/maps/search/?api=1&query=208%20WASHINGTON%20AVE.%20HOMESTEAD,%20FL%2033030";
 
@@ -221,8 +222,27 @@ export default function Home() {
             </FadeInOnScroll>
           </div>
         </section>
+        
+        {transportVanImage && (
+          <section id="transport" className="w-full py-12 md:py-20 lg:py-20 bg-secondary/40">
+            <div className="container px-4 md:px-6">
+              <FadeInOnScroll>
+                <div className="flex justify-center">
+                  <Image
+                    src={transportVanImage.imageUrl}
+                    alt={transportVanImage.description}
+                    data-ai-hint={transportVanImage.imageHint}
+                    width={1000}
+                    height={600}
+                    className="mx-auto aspect-video overflow-hidden rounded-xl object-contain object-center sm:w-full lg:order-last transition-all duration-300 hover:shadow-xl hover:-translate-y-2"
+                  />
+                </div>
+              </FadeInOnScroll>
+            </div>
+          </section>
+        )}
 
-        <section id="about" className="w-full py-12 md:py-20 lg:py-20 bg-secondary/40">
+        <section id="about" className="w-full py-12 md:py-20 lg:py-20">
           <div className="container grid items-center gap-10 px-4 md:px-6 lg:grid-cols-2 lg:gap-16">
             <FadeInOnScroll>
               <div className="space-y-4">
@@ -351,9 +371,3 @@ export default function Home() {
     </div>
   );
 }
-
-    
-
-
-
-    
