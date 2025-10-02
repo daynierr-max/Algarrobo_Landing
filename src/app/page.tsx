@@ -34,10 +34,9 @@ export default function Home() {
 
   return (
     <div className="flex flex-col min-h-[100dvh]">
-      <header className="px-4 lg:px-6 h-16 flex items-center sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-        <Link href="#" className="flex items-center justify-center gap-2" prefetch={false}>
+      <header className="px-4 lg:px-6 h-20 flex items-center sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+        <Link href="#" className="flex items-center justify-center" prefetch={false}>
           <Logo />
-          <span className="font-headline text-2xl font-bold text-primary">Algarrobo</span>
         </Link>
         <nav className="ml-auto flex items-center gap-4 sm:gap-6">
           <Link href="#services" className="text-sm font-medium hover:underline underline-offset-4 hidden sm:block" prefetch={false}>
