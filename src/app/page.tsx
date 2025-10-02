@@ -34,14 +34,14 @@ export default function Home() {
 
   return (
     <div className="flex flex-col min-h-[100dvh]">
-      <header className="px-4 lg:px-6 py-4 flex items-center justify-between sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-        <div className="flex items-center">
+      <header className="px-4 lg:px-6 h-20 flex items-center justify-between sticky top-0 z-50 w-full border-b border-border/40 bg-background/80 backdrop-blur-sm">
+        <div className="flex-1 flex justify-start">
             <Link href="#" className="flex items-center justify-center" prefetch={false}>
               <Logo />
             </Link>
         </div>
         
-        <nav className="flex items-center gap-4 sm:gap-6">
+        <nav className="flex-1 flex justify-end items-center gap-4 sm:gap-6">
             <Link href="#services" className="text-sm font-medium hover:underline underline-offset-4 hidden sm:block" prefetch={false}>
               Services
             </Link>
@@ -88,7 +88,7 @@ export default function Home() {
             </div>
             <div className="mx-auto grid items-start gap-8 sm:max-w-4xl sm:grid-cols-2 md:gap-12 lg:max-w-5xl">
               {services.map((service, index) => (
-                <Card key={index} className="bg-card/80 backdrop-blur-sm transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+                <Card key={index} className="bg-card backdrop-blur-sm transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
                   <CardHeader className="flex flex-row items-center gap-4 pb-4">
                     {service.icon}
                     <CardTitle className="font-headline text-2xl">{service.title}</CardTitle>
