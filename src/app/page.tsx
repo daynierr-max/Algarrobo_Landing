@@ -160,7 +160,7 @@ export default function Home() {
             <div className="mx-auto grid items-start gap-8 sm:max-w-4xl sm:grid-cols-2 md:gap-12 lg:max-w-5xl lg:grid-cols-3">
               {services.map((service, index) => (
                 <FadeInOnScroll key={index} delay={index * 100}>
-                  <Card className="bg-card backdrop-blur-sm transition-all duration-300 hover:shadow-xl hover:-translate-y-2 h-full">
+                  <Card className="border shadow-lg transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 h-full">
                     <CardHeader className="flex flex-row items-center gap-4 pb-4">
                       {service.icon}
                       <CardTitle className="font-headline text-2xl">{service.title}</CardTitle>
