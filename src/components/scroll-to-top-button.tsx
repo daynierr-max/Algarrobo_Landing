@@ -9,7 +9,10 @@ export function ScrollToTopButton() {
   const [isVisible, setIsVisible] = useState(false);
 
   const toggleVisibility = () => {
-    if (window.scrollY > 300) {
+    // Check if the user has scrolled to the bottom of the page
+    const isAtBottom = window.innerHeight + window.scrollY >= document.body.offsetHeight - 20; // 20px offset
+    
+    if (isAtBottom) {
       setIsVisible(true);
     } else {
       setIsVisible(false);
