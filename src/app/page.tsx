@@ -5,7 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { HeartHandshake, BrainCircuit, Users, UtensilsCrossed, Phone, Bus, Facebook, Instagram, Mail, Building, Clock, Printer } from "lucide-react";
+import { HeartHandshake, BrainCircuit, Users, UtensilsCrossed, Phone, Bus, Facebook, Instagram, Mail, Building, Clock, Printer, Globe } from "lucide-react";
 import Logo from "@/components/logo";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
 import { useState, useEffect } from "react";
@@ -13,6 +13,9 @@ import { FadeInOnScroll } from "@/components/fade-in-on-scroll";
 import { ScrollToTopButton } from "@/components/scroll-to-top-button";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { Badge } from "@/components/ui/badge";
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
+import { SpainFlagIcon } from "@/components/icons/spain-flag";
+import { FranceFlagIcon } from "@/components/icons/france-flag";
 
 const services = [
   {
@@ -112,6 +115,24 @@ export default function Home() {
               <Button asChild className="btn-gradient transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
                   <Link href="#contact"><span>Contact Us</span></Link>
               </Button>
+              <DropdownMenu>
+                <DropdownMenuTrigger asChild>
+                  <Button variant="outline" size="icon">
+                    <Globe className="h-[1.2rem] w-[1.2rem]" />
+                    <span className="sr-only">Select language</span>
+                  </Button>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent align="end">
+                  <DropdownMenuItem>
+                    <SpainFlagIcon className="h-4 w-6 mr-2" />
+                    <span>Español</span>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem>
+                    <FranceFlagIcon className="h-4 w-6 mr-2" />
+                    <span>Français</span>
+                  </DropdownMenuItem>
+                </DropdownMenuContent>
+              </DropdownMenu>
           </nav>
         </div>
       </header>
@@ -334,7 +355,9 @@ export default function Home() {
               </div>
           </div>
           <div className="container px-4 md:px-6 mt-8 flex flex-col sm:flex-row justify-between items-center border-t pt-6">
-              <p className="text-xs text-muted-foreground">&copy; {year || new Date().getFullYear()} Algarrobo Adult Day Care. All rights reserved.</p>
+          <p className="text-xs text-muted-foreground">
+            &copy; {year ? <span>{year}</span> : new Date().getFullYear()} Algarrobo Adult Day Care LLC. All rights reserved.
+          </p>
               <nav className="flex gap-4 sm:gap-6 items-center mt-4 sm:mt-0">
                   <Link href="#" className="text-xs hover:underline underline-offset-4" prefetch={false}>
                       Privacy Policy
@@ -349,3 +372,5 @@ export default function Home() {
     </div>
   );
 }
+
+    
