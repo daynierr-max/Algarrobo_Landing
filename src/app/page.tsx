@@ -342,7 +342,7 @@ export default function Home() {
               <div className="flex flex-col items-center md:items-end gap-4">
                   <h3 className="font-headline text-lg font-bold">Síguenos</h3>
                   <div className="flex gap-4">
-                      <Link href="#" aria-label="Facebook" prefetch={false}>
+                      <Link href="https://www.facebook.com/share/19KR7mn3r4/?mibextid=wwXIfr" aria-label="Facebook" prefetch={false} target="_blank" rel="noopener noreferrer">
                           <Facebook className="h-6 w-6 hover:text-primary transition-colors" />
                       </Link>
                       <Link href="https://www.instagram.com/algarrobo_adult_day_care/" aria-label="Instagram" prefetch={false} target="_blank" rel="noopener noreferrer">
@@ -372,5 +372,7 @@ export default function Home() {
     </div>
   );
 }
+
+    
 
     
