@@ -8,7 +8,8 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { HeartHandshake, BrainCircuit, Users, UtensilsCrossed, Phone, Bus, Facebook, Instagram, Mail, Building, Clock, Printer, Globe } from "lucide-react";
 import Logo from "@/components/logo";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
+import Autoplay from "embla-carousel-autoplay";
 import { FadeInOnScroll } from "@/components/fade-in-on-scroll";
 import { ScrollToTopButton } from "@/components/scroll-to-top-button";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
@@ -82,6 +83,9 @@ const WhatsappIcon = (props: React.SVGProps<SVGSVGElement>) => (
 export default function Home() {
   const [year, setYear] = useState<number | null>(null);
   const mapsUrl = "https://www.google.com/maps/search/?api=1&query=208%20WASHINGTON%20AVE.%20HOMESTEAD,%20FL%2033030";
+  const plugin = useRef(
+    Autoplay({ delay: 3000, stopOnInteraction: true })
+  );
 
   useEffect(() => {
     setYear(new Date().getFullYear());
@@ -185,7 +189,7 @@ export default function Home() {
                   <Card className="border shadow-lg transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 h-full">
                     <CardHeader className="flex flex-row items-center gap-4 pb-4">
                       {service.icon}
-                      <CardTitle className="font-headline text-2xl">{service.title}</CardTitle>
+                      <CardTitle>{service.title}</CardTitle>
                     </CardHeader>
                     <CardContent>
                       <p className="text-foreground/80">{service.description}</p>
@@ -243,45 +247,50 @@ export default function Home() {
         </section>
 
         <section id="gallery" className="w-full py-12 md:py-20 lg:py-24 bg-secondary/40">
-          <div className="container px-4 md:px-6">
-            <FadeInOnScroll>
-              <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
-                <div className="space-y-2">
-                  <div className="inline-block rounded-lg bg-accent/20 px-3 py-1 text-sm text-accent-foreground">Gallery</div>
-                  <h2 className="text-3xl font-headline font-bold tracking-tighter sm:text-5xl">Moments of Joy</h2>
-                  <p className="max-w-[900px] text-foreground/80 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                    A picture is worth a thousand words. Here are some of the happy moments we share at Algarrobo.
-                  </p>
-                </div>
-              </div>
-            </FadeInOnScroll>
-            <FadeInOnScroll delay={100}>
-              <Carousel className="w-full max-w-4xl mx-auto">
-                <CarouselContent>
-                  {galleryImages.map((image, index) => (
-                    <CarouselItem key={index}>
-                      <div className="p-1">
-                        <Card>
-                          <CardContent className="flex aspect-video items-center justify-center p-0 overflow-hidden rounded-lg">
-                            <Image
-                              src={image.imageUrl}
-                              alt={image.description}
-                              width={1280}
-                              height={720}
-                              className="object-cover w-full h-full"
-                              data-ai-hint={image.imageHint}
-                            />
-                          </CardContent>
-                        </Card>
-                      </div>
-                    </CarouselItem>
-                  ))}
-                </CarouselContent>
-                <CarouselPrevious />
-                <CarouselNext />
-              </Carousel>
-            </FadeInOnScroll>
-          </div>
+            <div className="container px-4 md:px-6">
+                <FadeInOnScroll>
+                    <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
+                        <div className="space-y-2">
+                            <div className="inline-block rounded-lg bg-accent/20 px-3 py-1 text-sm text-accent-foreground">Galería</div>
+                            <h2 className="text-3xl font-headline font-bold tracking-tighter sm:text-5xl">Momentos de Alegría</h2>
+                            <p className="max-w-[900px] text-foreground/80 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+                                Una imagen vale más que mil palabras. Aquí tienes algunos de los momentos felices que compartimos en Algarrobo.
+                            </p>
+                        </div>
+                    </div>
+                </FadeInOnScroll>
+                <FadeInOnScroll delay={100}>
+                    <Carousel 
+                      plugins={[plugin.current]}
+                      className="w-full max-w-4xl mx-auto"
+                      onMouseEnter={plugin.current.stop}
+                      onMouseLeave={plugin.current.reset}
+                    >
+                        <CarouselContent>
+                            {galleryImages.map((image, index) => (
+                                <CarouselItem key={index}>
+                                    <div className="p-1">
+                                        <Card>
+                                            <CardContent className="flex aspect-video items-center justify-center p-0 overflow-hidden rounded-lg">
+                                                <Image
+                                                    src={image.imageUrl}
+                                                    alt={image.description}
+                                                    width={1280}
+                                                    height={720}
+                                                    className="object-cover w-full h-full"
+                                                    data-ai-hint={image.imageHint}
+                                                />
+                                            </CardContent>
+                                        </Card>
+                                    </div>
+                                </CarouselItem>
+                            ))}
+                        </CarouselContent>
+                        <CarouselPrevious />
+                        <CarouselNext />
+                    </Carousel>
+                </FadeInOnScroll>
+            </div>
         </section>
 
         <section id="about" className="w-full py-12 md:py-20 lg:py-24">
