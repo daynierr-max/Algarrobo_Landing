@@ -251,10 +251,10 @@ export default function Home() {
                 <FadeInOnScroll>
                     <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
                         <div className="space-y-2">
-                            <div className="inline-block rounded-lg bg-accent/20 px-3 py-1 text-sm text-accent-foreground">Galería</div>
-                            <h2 className="text-3xl font-headline font-bold tracking-tighter sm:text-5xl">Momentos de Alegría</h2>
+                            <div className="inline-block rounded-lg bg-accent/20 px-3 py-1 text-sm text-accent-foreground">Gallery</div>
+                            <h2 className="text-3xl font-headline font-bold tracking-tighter sm:text-5xl">Moments of Joy</h2>
                             <p className="max-w-[900px] text-foreground/80 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                                Una imagen vale más que mil palabras. Aquí tienes algunos de los momentos felices que compartimos en Algarrobo.
+                                A picture is worth a thousand words. Here are some of the happy moments we share at Algarrobo.
                             </p>
                         </div>
                     </div>
@@ -424,5 +424,7 @@ export default function Home() {
     </div>
   );
 }
+
+    
 
     
