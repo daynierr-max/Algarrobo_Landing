@@ -8,15 +8,14 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { HeartHandshake, BrainCircuit, Users, UtensilsCrossed, Phone, Bus, Facebook, Instagram, Mail, Building, Clock, Printer, Globe } from "lucide-react";
 import Logo from "@/components/logo";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
-import { useState, useEffect, useRef } from "react";
-import Autoplay from "embla-carousel-autoplay";
+import { useState, useEffect } from "react";
 import { FadeInOnScroll } from "@/components/fade-in-on-scroll";
 import { ScrollToTopButton } from "@/components/scroll-to-top-button";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
 import { SpainFlagIcon } from "@/components/icons/spain-flag";
 import { FranceFlagIcon } from "@/components/icons/france-flag";
+import { GalleryCarousel } from "@/components/gallery-carousel";
 
 const services = [
   {
@@ -60,7 +59,6 @@ const schedule = {
 };
 
 const aboutImage = PlaceHolderImages.find(p => p.id === 'about-us-care');
-const galleryImages = PlaceHolderImages.filter(p => p.id.startsWith('local-gallery-'));
 
 const WhatsappIcon = (props: React.SVGProps<SVGSVGElement>) => (
     <svg
@@ -83,9 +81,6 @@ const WhatsappIcon = (props: React.SVGProps<SVGSVGElement>) => (
 export default function Home() {
   const [year, setYear] = useState<number | null>(null);
   const mapsUrl = "https://www.google.com/maps/search/?api=1&query=208%20WASHINGTON%20AVE.%20HOMESTEAD,%20FL%2033030";
-  const plugin = useRef(
-    Autoplay({ delay: 3000, stopOnInteraction: true })
-  );
 
   useEffect(() => {
     setYear(new Date().getFullYear());
@@ -260,35 +255,7 @@ export default function Home() {
                     </div>
                 </FadeInOnScroll>
                 <FadeInOnScroll delay={100}>
-                    <Carousel 
-                      plugins={[plugin.current]}
-                      className="w-full max-w-4xl mx-auto"
-                      onMouseEnter={plugin.current.stop}
-                      onMouseLeave={plugin.current.reset}
-                    >
-                        <CarouselContent>
-                            {galleryImages.map((image, index) => (
-                                <CarouselItem key={index}>
-                                    <div className="p-1">
-                                        <Card>
-                                            <CardContent className="flex aspect-video items-center justify-center p-0 overflow-hidden rounded-lg">
-                                                <Image
-                                                    src={image.imageUrl}
-                                                    alt={image.description}
-                                                    width={1280}
-                                                    height={720}
-                                                    className="object-cover w-full h-full"
-                                                    data-ai-hint={image.imageHint}
-                                                />
-                                            </CardContent>
-                                        </Card>
-                                    </div>
-                                </CarouselItem>
-                            ))}
-                        </CarouselContent>
-                        <CarouselPrevious />
-                        <CarouselNext />
-                    </Carousel>
+                    <GalleryCarousel />
                 </FadeInOnScroll>
             </div>
         </section>
@@ -424,7 +391,3 @@ export default function Home() {
     </div>
   );
 }
-
-    
-
-    
