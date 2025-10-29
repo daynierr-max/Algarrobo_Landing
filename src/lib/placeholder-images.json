@@ -7,33 +7,33 @@
       "imageHint": "seniors painting"
     },
     {
-      "id": "activity-gallery-1",
+      "id": "local-gallery-1",
       "description": "Un grupo de personas mayores pintando en un taller de arte.",
-      "imageUrl": "https://images.unsplash.com/photo-1501999054620-be9719bd7e64?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxzZW5pb3JzJTIwcGFpbnRpbmd8ZW58MHx8fHwxNzYxNzYwMDE1fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "/images/actividades1.jpg",
       "imageHint": "seniors painting"
     },
     {
-      "id": "activity-gallery-2",
+      "id": "local-gallery-2",
       "description": "Dos personas mayores jugando una partida de ajedrez en un parque.",
-      "imageUrl": "https://images.unsplash.com/photo-1729971830571-0b74c37a742b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8c2VuaW9ycyUyMGNoZXNzfGVufDB8fHx8MTc2MTc2MDAxNXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "/images/actividades2.jpg",
       "imageHint": "seniors chess"
     },
     {
-      "id": "activity-gallery-3",
+      "id": "local-gallery-3",
       "description": "Personas mayores riendo y socializando en una cafetería.",
-      "imageUrl": "https://images.unsplash.com/photo-1759365869283-a16e6100aa74?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxzZW5pb3JzJTIwc29jaWFsaXppbmd8ZW58MHx8fHwxNzYxNzMzMDI2fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "/images/actividades3.jpg",
       "imageHint": "seniors socializing"
     },
     {
-      "id": "activity-gallery-4",
+      "id": "local-gallery-4",
       "description": "Una pareja de ancianos bailando salsa en un evento comunitario.",
-      "imageUrl": "https://images.unsplash.com/photo-1758686254555-9bcaba0dd46d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxzZW5pb3JzJTIwZGFuY2luZ3xlbnwwfHx8fDE3NjE3NjAwMTV8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "/images/actividades4.jpg",
       "imageHint": "seniors dancing"
     },
     {
-      "id": "activity-gallery-5",
+      "id": "local-gallery-5",
       "description": "Personas mayores haciendo manualidades con arcilla y cerámica.",
-      "imageUrl": "https://images.unsplash.com/photo-1542994971-a5a518af86e6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxzZW5pb3JzJTIwY3JhZnRzfGVufDB8fHx8MTc2MTc2MDAxNXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "/images/actividades5.jpg",
       "imageHint": "seniors crafts"
     }
   ]

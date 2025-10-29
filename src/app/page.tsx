@@ -12,7 +12,7 @@ import { useState, useEffect } from "react";
 import { FadeInOnScroll } from "@/components/fade-in-on-scroll";
 import { ScrollToTopButton } from "@/components/scroll-to-top-button";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
-import { Badge } from "@/components/ui/badge";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
 import { SpainFlagIcon } from "@/components/icons/spain-flag";
 import { FranceFlagIcon } from "@/components/icons/france-flag";
@@ -59,6 +59,7 @@ const schedule = {
 };
 
 const aboutImage = PlaceHolderImages.find(p => p.id === 'about-us-care');
+const galleryImages = PlaceHolderImages.filter(p => p.id.startsWith('local-gallery-'));
 
 const WhatsappIcon = (props: React.SVGProps<SVGSVGElement>) => (
     <svg
@@ -241,6 +242,48 @@ export default function Home() {
           </div>
         </section>
 
+        <section id="gallery" className="w-full py-12 md:py-20 lg:py-24 bg-secondary/40">
+          <div className="container px-4 md:px-6">
+            <FadeInOnScroll>
+              <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
+                <div className="space-y-2">
+                  <div className="inline-block rounded-lg bg-accent/20 px-3 py-1 text-sm text-accent-foreground">Gallery</div>
+                  <h2 className="text-3xl font-headline font-bold tracking-tighter sm:text-5xl">Moments of Joy</h2>
+                  <p className="max-w-[900px] text-foreground/80 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+                    A picture is worth a thousand words. Here are some of the happy moments we share at Algarrobo.
+                  </p>
+                </div>
+              </div>
+            </FadeInOnScroll>
+            <FadeInOnScroll delay={100}>
+              <Carousel className="w-full max-w-4xl mx-auto">
+                <CarouselContent>
+                  {galleryImages.map((image, index) => (
+                    <CarouselItem key={index}>
+                      <div className="p-1">
+                        <Card>
+                          <CardContent className="flex aspect-video items-center justify-center p-0 overflow-hidden rounded-lg">
+                            <Image
+                              src={image.imageUrl}
+                              alt={image.description}
+                              width={1280}
+                              height={720}
+                              className="object-cover w-full h-full"
+                              data-ai-hint={image.imageHint}
+                            />
+                          </CardContent>
+                        </Card>
+                      </div>
+                    </CarouselItem>
+                  ))}
+                </CarouselContent>
+                <CarouselPrevious />
+                <CarouselNext />
+              </Carousel>
+            </FadeInOnScroll>
+          </div>
+        </section>
+
         <section id="about" className="w-full py-12 md:py-20 lg:py-24">
           <div className="container px-4 md:px-6">
             <div className="grid gap-10 lg:grid-cols-2 lg:gap-16 items-center">
@@ -372,7 +415,5 @@ export default function Home() {
     </div>
   );
 }
-
-    
 
     
