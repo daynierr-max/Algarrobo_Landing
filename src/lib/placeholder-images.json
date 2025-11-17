@@ -3,7 +3,7 @@
     {
       "id": "hero-background",
       "description": "Imagen principal de bienvenida.",
-      "imageUrl": "/imagen/principal.jpg",
+      "imageUrl": "/images/principal.jpg",
       "imageHint": "bienvenida personas mayores"
     },
     {
