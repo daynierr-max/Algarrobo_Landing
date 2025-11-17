@@ -59,6 +59,7 @@ const schedule = {
 };
 
 const aboutImage = PlaceHolderImages.find(p => p.id === 'about-us-care');
+const heroImage = PlaceHolderImages.find(p => p.id === 'hero-background');
 
 const WhatsappIcon = (props: React.SVGProps<SVGSVGElement>) => (
     <svg
@@ -138,30 +139,38 @@ export default function Home() {
       </header>
 
       <main className="flex-1">
-        <section id="hero" className="w-full py-20 md:py-24 lg:py-32">
-          <div className="container px-4 md:px-6">
-            <div className="flex flex-col items-center space-y-6 text-center">
-              
-              <div className="max-w-4xl">
-                <FadeInOnScroll>
-                  <h1 className="text-4xl font-headline font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl text-primary">
-                    A Warm, Welcoming Day for Your Loved Ones
-                  </h1>
-                </FadeInOnScroll>
-                <FadeInOnScroll delay={100}>
-                  <p className="mx-auto max-w-[700px] text-foreground/80 md:text-xl mt-6">
-                    Algarrobo Adult Day Care provides a safe, engaging, and caring environment, offering peace of mind for families and joyful days for our members. A space where laughter is the best therapy. Caring for our adults with love and joy.
-                  </p>
-                </FadeInOnScroll>
-              </div>
-              <FadeInOnScroll delay={200}>
-                <div className="space-x-4 mt-4">
-                  <Button asChild size="lg">
-                    <Link href="#services">Explore Our Services</Link>
-                  </Button>
-                </div>
+      <section id="hero" className="relative w-full h-[70vh] flex items-center justify-center text-center">
+          {heroImage && (
+            <Image
+              alt={heroImage.description}
+              src={heroImage.imageUrl}
+              fill
+              className="object-cover"
+              data-ai-hint={heroImage.imageHint}
+              priority
+            />
+          )}
+          <div className="absolute inset-0 bg-black/50" />
+          <div className="relative container px-4 md:px-6">
+            <div className="max-w-4xl mx-auto">
+              <FadeInOnScroll>
+                <h1 className="text-4xl font-headline font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl text-white">
+                  A Warm, Welcoming Day for Your Loved Ones
+                </h1>
+              </FadeInOnScroll>
+              <FadeInOnScroll delay={100}>
+                <p className="mx-auto max-w-[700px] text-white/80 md:text-xl mt-6">
+                  Algarrobo Adult Day Care provides a safe, engaging, and caring environment, offering peace of mind for families and joyful days for our members. A space where laughter is the best therapy. Caring for our adults with love and joy.
+                </p>
               </FadeInOnScroll>
             </div>
+            <FadeInOnScroll delay={200}>
+              <div className="space-x-4 mt-8">
+                <Button asChild size="lg">
+                  <Link href="#services">Explore Our Services</Link>
+                </Button>
+              </div>
+            </FadeInOnScroll>
           </div>
         </section>
 
