@@ -4,7 +4,7 @@
       "id": "hero-background",
       "description": "Imagen principal de bienvenida.",
       "imageUrl": "/images/principal.jpg",
-      "imageHint": "bienvenida personas mayores"
+      "imageHint": "caregiver senior"
     },
     {
       "id": "about-us-care",
