@@ -81,7 +81,8 @@ const WhatsappIcon = (props: React.SVGProps<SVGSVGElement>) => (
 
 declare global {
     interface Window {
-        triggerSpanishTranslation: () => void;
+        triggerSpanishTranslation?: () => void;
+        google?: any;
     }
 }
 
@@ -91,13 +92,32 @@ export default function Home() {
 
   useEffect(() => {
     setYear(new Date().getFullYear());
-  }, []);
 
-  useEffect(() => {
     if (typeof window !== "undefined") {
       window.scrollTo(0, 0);
+
+      window.triggerSpanishTranslation = () => {
+        const iframe = document.querySelector<HTMLIFrameElement>('.goog-te-menu-frame');
+        if (!iframe?.contentWindow) return;
+        
+        const links = iframe.contentWindow.document.getElementsByTagName('a');
+        for(let i=0; i < links.length; i++){
+          if(links[i].innerText.includes('Spanish') || links[i].innerText.includes('Español')){
+            links[i].click();
+            return;
+          }
+        }
+      };
     }
   }, []);
+
+  const handleTranslate = (lang: 'es' | 'fr') => {
+    if (typeof window !== 'undefined' && window.triggerSpanishTranslation) {
+        if(lang === 'es') {
+            window.triggerSpanishTranslation();
+        }
+    }
+  }
 
 
   return (
@@ -130,7 +150,7 @@ export default function Home() {
                   </Button>
                 </DropdownMenuTrigger>
                 <DropdownMenuContent align="end">
-                  <DropdownMenuItem onClick={() => window.triggerSpanishTranslation()}>
+                  <DropdownMenuItem onClick={() => handleTranslate('es')}>
                     <SpainFlagIcon className="h-4 w-6 mr-2" />
                     <span>Español</span>
                   </DropdownMenuItem>
