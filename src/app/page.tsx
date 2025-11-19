@@ -79,6 +79,12 @@ const WhatsappIcon = (props: React.SVGProps<SVGSVGElement>) => (
     </svg>
   );
 
+declare global {
+    interface Window {
+        triggerSpanishTranslation: () => void;
+    }
+}
+
 export default function Home() {
   const [year, setYear] = useState<number | null>(null);
   const mapsUrl = "https://www.google.com/maps/search/?api=1&query=208%20WASHINGTON%20AVE.%20HOMESTEAD,%20FL%2033030";
@@ -124,7 +130,7 @@ export default function Home() {
                   </Button>
                 </DropdownMenuTrigger>
                 <DropdownMenuContent align="end">
-                  <DropdownMenuItem>
+                  <DropdownMenuItem onClick={() => window.triggerSpanishTranslation()}>
                     <SpainFlagIcon className="h-4 w-6 mr-2" />
                     <span>Español</span>
                   </DropdownMenuItem>
