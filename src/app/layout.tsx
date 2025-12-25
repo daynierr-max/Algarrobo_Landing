@@ -2,6 +2,7 @@ import type {Metadata} from 'next';
 import './globals.css';
 import { Toaster } from "@/components/ui/toaster";
 import Script from 'next/script';
+import SnowCanvas from '@/components/snow-canvas';
 
 export const metadata: Metadata = {
   title: 'Algarrobo Landing',
@@ -22,6 +23,7 @@ export default function RootLayout({
         <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Inter:wght@400;500;700&display=swap" rel="stylesheet" />
       </head>
       <body className="antialiased">
+        <SnowCanvas />
         <div id="google_translate_element" style={{display: 'none'}}></div>
         
         {children}
