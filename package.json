@@ -4,9 +4,11 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "NODE_ENV=production next build",
+    "build": "NODE_ENV=production next build --webpack",
+    "build:cloudflare": "STATIC_EXPORT=1 NODE_ENV=production next build --webpack",
+    "build:hostinger": "STATIC_EXPORT=1 NODE_ENV=production next build --webpack",
     "start": "next start",
-    "lint": "next lint",
+    "lint": "eslint .",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
@@ -40,7 +42,7 @@
     "embla-carousel-react": "^8.1.5",
     "firebase": "^11.9.1",
     "lucide-react": "^0.489.0",
-    "next": "14.2.35",
+    "next": "^16.2.1",
     "patch-package": "^8.0.0",
     "react": "^18.3.1",
     "react-day-picker": "^8.10.1",
@@ -52,11 +54,19 @@
     "zod": "^3.24.2"
   },
   "devDependencies": {
+    "@eslint/eslintrc": "^3.3.5",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
+    "eslint": "^9.39.4",
+    "eslint-config-next": "^16.2.1",
     "postcss": "^8",
     "tailwindcss": "^3.4.1",
     "typescript": "^5"
-  }
+  },
+  "browserslist": [
+    ">0.3%",
+    "not dead",
+    "not op_mini all"
+  ]
 }

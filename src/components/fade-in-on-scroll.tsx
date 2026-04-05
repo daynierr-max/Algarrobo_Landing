@@ -43,7 +43,7 @@ export function FadeInOnScroll({ children, className, delay = 0, threshold = 0.1
     <div
       ref={elementRef}
       className={cn(
-        'transition-all duration-1000 ease-out',
+        'transition-[opacity,transform] duration-1000 ease-out',
         isVisible ? 'animate-fade-in-up' : 'opacity-0 translate-y-8',
         className
       )}

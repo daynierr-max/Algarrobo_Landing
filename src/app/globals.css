@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 body {
-  font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-family: var(--font-body), "Avenir Next", "Segoe UI", sans-serif;
 }
 
 @layer base {
@@ -81,11 +81,97 @@ body {
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground antialiased;
+  }
+
+  section {
+    scroll-margin-top: 6rem;
+  }
+
+  a:focus-visible,
+  button:focus-visible {
+    outline: 2px solid hsl(var(--ring));
+    outline-offset: 2px;
   }
 }
 
 @layer utilities {
+  .skip-link {
+    position: fixed;
+    left: 0.75rem;
+    top: 0.75rem;
+    transform: translateY(-200%);
+    z-index: 999;
+    border-radius: 9999px;
+    background: hsl(var(--primary));
+    color: hsl(var(--primary-foreground));
+    font-size: 0.875rem;
+    font-weight: 600;
+    padding: 0.6rem 1rem;
+    transition: transform 0.2s ease;
+  }
+
+  .skip-link:focus {
+    transform: translateY(0);
+  }
+
+  .header-shine {
+    position: absolute;
+    inset: auto 0 0 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent 0%, hsl(var(--primary) / 0.45) 50%, transparent 100%);
+  }
+
+  .hero-atmosphere::before,
+  .hero-atmosphere::after {
+    content: "";
+    position: absolute;
+    pointer-events: none;
+    z-index: 1;
+    border-radius: 9999px;
+    filter: blur(36px);
+  }
+
+  .hero-atmosphere::before {
+    width: 19rem;
+    height: 19rem;
+    left: -5rem;
+    top: -4rem;
+    background: hsl(var(--accent) / 0.3);
+  }
+
+  .hero-atmosphere::after {
+    width: 16rem;
+    height: 16rem;
+    right: -3rem;
+    bottom: -3rem;
+    background: hsl(var(--primary) / 0.4);
+  }
+
+  .section-atmosphere-warm {
+    position: relative;
+    isolation: isolate;
+    background:
+      radial-gradient(circle at 15% 20%, hsl(var(--primary) / 0.06), transparent 38%),
+      radial-gradient(circle at 90% 85%, hsl(var(--accent) / 0.08), transparent 34%),
+      hsl(var(--background));
+  }
+
+  .section-atmosphere-cool {
+    position: relative;
+    isolation: isolate;
+    background:
+      radial-gradient(circle at 80% 20%, hsl(var(--accent) / 0.1), transparent 40%),
+      radial-gradient(circle at 20% 80%, hsl(var(--primary) / 0.05), transparent 32%),
+      hsl(var(--secondary) / 0.35);
+  }
+
+  .glass-panel {
+    background: linear-gradient(135deg, hsl(var(--card) / 0.84), hsl(var(--card) / 0.6));
+    backdrop-filter: blur(8px);
+    border: 1px solid hsl(var(--border) / 0.7);
+  }
+
   .btn-gradient {
     position: relative;
     overflow: hidden;
@@ -115,6 +201,20 @@ body {
   .btn-gradient:hover::before {
     left: 100%;
   }
+
+  .contact-grid {
+    background:
+      linear-gradient(180deg, hsl(var(--card) / 0.92), hsl(var(--card) / 0.8)),
+      radial-gradient(circle at top right, hsl(var(--primary) / 0.14), transparent 32%);
+    border: 1px solid hsl(var(--border) / 0.7);
+    backdrop-filter: blur(10px);
+  }
+
+  .soft-divider {
+    height: 1px;
+    width: 100%;
+    background: linear-gradient(90deg, transparent, hsl(var(--border)), transparent);
+  }
 }
 
 .logo-container .light-sweep {
@@ -132,5 +232,14 @@ body {
   }
   100% {
     background-position: 200% 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }

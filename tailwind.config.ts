@@ -1,4 +1,5 @@
 import type {Config} from 'tailwindcss';
+import tailwindcssAnimate from 'tailwindcss-animate';
 
 export default {
   darkMode: ['class'],
@@ -17,8 +18,8 @@ export default {
     },
     extend: {
       fontFamily: {
-        body: ['-apple-system', 'system-ui', 'BlinkMacSystemFont', "Segoe UI", 'Roboto', "Helvetica Neue", 'Arial', 'sans-serif'],
-        headline: ['Lora', 'serif'],
+        body: ['var(--font-body)', '-apple-system', 'system-ui', 'sans-serif'],
+        headline: ['var(--font-headline)', 'serif'],
         code: ['monospace'],
       },
       colors: {
@@ -124,5 +125,5 @@ export default {
       },
     },
   },
-  plugins: [require('tailwindcss-animate')],
+  plugins: [tailwindcssAnimate],
 } satisfies Config;

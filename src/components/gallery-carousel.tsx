@@ -32,15 +32,16 @@ export function GalleryCarousel() {
         {galleryImages.map((image, index) => (
           <CarouselItem key={index}>
             <div className="p-1">
-              <Card>
-                <CardContent className="flex aspect-video items-center justify-center p-0 overflow-hidden rounded-lg">
+              <Card className="group overflow-hidden rounded-2xl border-primary/10 shadow-xl">
+                <CardContent className="relative aspect-video overflow-hidden p-0">
                   <Image
                     src={image.imageUrl}
                     alt={image.description}
-                    width={1280}
-                    height={720}
-                    className="object-cover w-full h-full"
+                    fill
+                    className="object-cover transition-transform duration-700 group-hover:scale-[1.03]"
                     data-ai-hint={image.imageHint}
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1024px"
+                    priority={index === 0}
                   />
                 </CardContent>
               </Card>

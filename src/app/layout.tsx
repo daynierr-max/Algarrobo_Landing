@@ -1,11 +1,25 @@
-import type {Metadata} from 'next';
-import './globals.css';
+import type { Metadata } from "next";
+import { Inter, Lora } from "next/font/google";
+import Script from "next/script";
+import "./globals.css";
 import { Toaster } from "@/components/ui/toaster";
-import Script from 'next/script';
+
+const bodyFont = Inter({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-body",
+});
+
+const headlineFont = Lora({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-headline",
+});
 
 export const metadata: Metadata = {
-  title: 'Algarrobo Landing',
-  description: 'A caring and welcoming adult day care center.',
+  title: "Algarrobo Adult Day Care | Homestead, Florida",
+  description:
+    "Centro de cuidado diurno para adultos en Homestead, Florida, con transporte, actividades diarias, acompañamiento familiar y contacto directo para solicitar información.",
 };
 
 export default function RootLayout({
@@ -17,28 +31,19 @@ export default function RootLayout({
     <html lang="es" className="scroll-smooth" suppressHydrationWarning>
       <head>
         <meta name="google" content="notranslate" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Inter:wght@400;500;700&display=swap" rel="stylesheet" />
       </head>
-      <body className="antialiased">
-        <div id="google_translate_element" style={{display: 'none'}}></div>
-        
+      <body className={`${bodyFont.variable} ${headlineFont.variable} font-body antialiased`}>
+        <div id="google_translate_element" style={{ display: "none" }}></div>
+
         {children}
         <Toaster />
-        
-        <Script
-          src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
-          strategy="afterInteractive"
-        />
-        <Script
-          id="google-translate"
-          strategy="afterInteractive"
-        >
+
+        <Script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" strategy="afterInteractive" />
+        <Script id="google-translate" strategy="afterInteractive">
           {`
             function googleTranslateElementInit() {
               if (typeof google !== 'undefined' && google.translate) {
-                new google.translate.TranslateElement({pageLanguage: 'en', includedLanguages: 'es,fr', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+                new google.translate.TranslateElement({pageLanguage: 'es', includedLanguages: 'en,fr', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
               }
             }
           `}

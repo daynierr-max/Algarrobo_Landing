@@ -43,3 +43,19 @@ next-env.d.ts
 # firebase
 firebase-debug.log
 firestore-debug.log
+studio.json
+
+# local project tooling
+.agents/
+.idx/
+.vscode/
+.npm-cache/
+
+# local browser review artifacts
+.playwright-mcp/
+desktop-*.png
+mobile-*.png
+review-*.png
+contact-*.png
+footer-*.png
+full-before-fix.png
